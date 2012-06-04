@@ -54,6 +54,16 @@ const
   DefaultBufferSize = 4096;
 
 type
+
+  /// TODO : Check 64/32 platform ?
+  {$IF not defined(PtrUInt)}
+    PtrUInt = Cardinal;
+  {$IFEND}
+  {$IF not defined(PtrInt)}
+    PtrInt = Integer;
+    PPtrInt = ^PtrInt;
+  {$IFEND}
+
   /// Error de un flux de transformation
   ETransformationStreamError = class(EInOutError);
 

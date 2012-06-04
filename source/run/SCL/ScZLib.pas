@@ -57,10 +57,10 @@ const
   clDefaultComp = zstream.cldefault;  /// Compression par défaut
   clMaxComp = zstream.clmax;          /// Compression maximale
   {$ELSE}
-  clNoComp = ZLib.clNone;         /// Pas de compression
-  clFastestComp = ZLib.clFastest; /// Compression la plus rapide
-  clDefaultComp = ZLib.clDefault; /// Compression par défaut
-  clMaxComp = ZLib.clMax;         /// Compression maximale
+  clNoComp = ZLib.clNone;             /// Pas de compression
+  clFastestComp = ZLib.clFastest;     /// Compression la plus rapide
+  clDefaultComp = ZLib.clDefault;     /// Compression par défaut
+  clMaxComp = ZLib.clMax;             /// Compression maximale
   {$ENDIF}
 
 procedure CompressStream(Stream: TStream; Dest: TStream = nil;

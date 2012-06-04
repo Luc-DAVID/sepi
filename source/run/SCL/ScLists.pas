@@ -63,6 +63,7 @@ type
 
   { TCompareStrings }
 
+
   TCompareStrings = class(TStrings)
   public
     {$IFDEF FPC}

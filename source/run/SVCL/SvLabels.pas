@@ -38,7 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SvLabels;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 uses
@@ -107,7 +107,9 @@ type
     property DragCursor;
     property DragKind;
     property DragMode;
+    {$IFNDEF FPC}
     property EllipsisPosition;
+    {$ENDIF}
     property Enabled;
     property FocusControl;
     property Font;
@@ -130,7 +132,9 @@ type
     property OnDragOver;
     property OnEndDock;
     property OnEndDrag;
+    {$IFNDEF FPC}
     property OnMouseActivate;
+    {$ENDIF}
     property OnMouseDown;
     property OnMouseMove;
     property OnMouseUp;

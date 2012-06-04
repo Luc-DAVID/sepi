@@ -38,11 +38,14 @@ statement from your version.
   @version 1.0
 *}
 unit SvImages;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 uses
-  Windows, Forms, Classes, Controls, ExtCtrls;
+   {$IFNDEF FPC}
+   Windows,
+   {$ENDIF}
+   Forms, Classes, Controls, ExtCtrls;
 
 type
   {*

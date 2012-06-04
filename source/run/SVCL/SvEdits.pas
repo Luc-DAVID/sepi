@@ -38,7 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SvEdits;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 uses
@@ -171,7 +171,9 @@ type
     property OnDockOver;
     property OnGetSiteInfo;
     property OnUnDock;
+    {$IFNDEF FPC}
     property OnCanResize;
+    {$ENDIF}
     property OnConstrainedResize;
     property OnResize;
     property OnContextPopup;

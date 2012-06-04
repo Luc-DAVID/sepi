@@ -40,10 +40,22 @@ statement from your version.
 *}
 unit ScCompilerMagic;
 {$i ..\..\source\Sepi.inc}
+
 interface
 
 uses
   TypInfo;
+
+// TODO : Check 64/32 platform ?
+{$IF not defined(PtrUInt)}
+type
+  PtrUInt = Cardinal;
+{$IFEND}
+{$IF not defined(PtrInt)}
+type
+  PtrInt = Integer;
+  PPtrInt = ^PtrInt;
+{$IFEND}
 
 procedure AbstractError;
 
