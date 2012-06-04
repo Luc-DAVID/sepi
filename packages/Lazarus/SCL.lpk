@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="SCL"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\..\source\run\SCL"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Files Count="23">
+      <Item1>
+        <Filename Value="..\..\source\run\SCL\ScClasses.pas"/>
+        <UnitName Value="ScClasses"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\..\source\run\SCL\ScCompilerMagic.pas"/>
+        <UnitName Value="ScCompilerMagic"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\..\source\run\SCL\ScConsoleUtils.pas"/>
+        <UnitName Value="ScConsoleUtils"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\..\source\run\SCL\ScConsts.pas"/>
+        <UnitName Value="ScConsts"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\..\source\run\SCL\ScCoroutines.pas"/>
+        <UnitName Value="ScCoroutines"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\..\source\run\SCL\ScDateTimeUtils.pas"/>
+        <UnitName Value="ScDateTimeUtils"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\..\source\run\SCL\ScEnumerators.pas"/>
+        <UnitName Value="ScEnumerators"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\..\source\run\SCL\ScIntegerSets.pas"/>
+        <UnitName Value="ScIntegerSets"/>
+      </Item8>
+      <Item9>
+        <Filename Value="..\..\source\run\SCL\ScInterfaces.pas"/>
+        <UnitName Value="ScInterfaces"/>
+      </Item9>
+      <Item10>
+        <Filename Value="..\..\source\run\SCL\ScLists.pas"/>
+        <UnitName Value="ScLists"/>
+      </Item10>
+      <Item11>
+        <Filename Value="..\..\source\run\SCL\ScLOGFile.pas"/>
+        <UnitName Value="ScLOGFile"/>
+      </Item11>
+      <Item12>
+        <Filename Value="..\..\source\run\SCL\ScLowLevel.pas"/>
+        <UnitName Value="ScLowLevel"/>
+      </Item12>
+      <Item13>
+        <Filename Value="..\..\source\run\SCL\ScMD5.pas"/>
+        <UnitName Value="ScMD5"/>
+      </Item13>
+      <Item14>
+        <Filename Value="..\..\source\run\SCL\ScNoSecretWindow.pas"/>
+        <UnitName Value="ScNoSecretWindow"/>
+      </Item14>
+      <Item15>
+        <Filename Value="..\..\source\run\SCL\ScPipes.pas"/>
+        <UnitName Value="ScPipes"/>
+      </Item15>
+      <Item16>
+        <Filename Value="..\..\source\run\SCL\ScSerializer.pas"/>
+        <UnitName Value="ScSerializer"/>
+      </Item16>
+      <Item17>
+        <Filename Value="..\..\source\run\SCL\ScStrUtils.pas"/>
+        <UnitName Value="ScStrUtils"/>
+      </Item17>
+      <Item18>
+        <Filename Value="..\..\source\run\SCL\ScSyncObjs.pas"/>
+        <UnitName Value="ScSyncObjs"/>
+      </Item18>
+      <Item19>
+        <Filename Value="..\..\source\run\SCL\ScTypInfo.pas"/>
+        <UnitName Value="ScTypInfo"/>
+      </Item19>
+      <Item20>
+        <Filename Value="..\..\source\run\SCL\ScUtils.pas"/>
+        <UnitName Value="ScUtils"/>
+      </Item20>
+      <Item21>
+        <Filename Value="..\..\source\run\SCL\ScWindows.pas"/>
+        <UnitName Value="ScWindows"/>
+      </Item21>
+      <Item22>
+        <Filename Value="..\..\source\run\SCL\ScXML.pas"/>
+        <UnitName Value="ScXML"/>
+      </Item22>
+      <Item23>
+        <Filename Value="..\..\source\run\SCL\ScZLib.pas"/>
+        <UnitName Value="ScZLib"/>
+      </Item23>
+    </Files>
+    <Type Value="RunAndDesignTime"/>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCLBase"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
