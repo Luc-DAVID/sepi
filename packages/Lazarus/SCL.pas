@@ -2,7 +2,7 @@
   This source is only used to compile and install the package.
  }
 
-unit SCLLaz;
+unit SCL;
 
 interface
 
@@ -10,15 +10,8 @@ uses
   ScClasses, ScCompilerMagic, ScConsoleUtils, ScConsts, ScCoroutines, 
   ScDateTimeUtils, ScEnumerators, ScIntegerSets, ScInterfaces, ScLists, 
   ScLOGFile, ScLowLevel, ScMD5, ScNoSecretWindow, ScPipes, ScSerializer, 
-  ScStrUtils, ScSyncObjs, ScTypInfo, ScUtils, ScWindows, ScXML, ScZLib, 
-  LazarusPackageIntf;
+  ScStrUtils, ScSyncObjs, ScTypInfo, ScUtils, ScWindows, ScXML, ScZLib;
 
 implementation
 
-procedure Register;
-begin
-end;
-
-initialization
-  RegisterPackage('SCLLaz', @Register);
 end.

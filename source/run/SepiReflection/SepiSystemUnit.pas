@@ -38,7 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiSystemUnit;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 {$ASSERTIONS ON}
@@ -142,7 +142,7 @@ type
     procedure CreateBuiltins;
 
     class function Get(Component: TSepiComponent): TSepiSystemUnit;
-      {$IF CompilerVersion >= 20} static; {$IFEND}
+      {$IF Defined(FPC) or (CompilerVersion >= 20)} static; {$IFEND}
 
     function GetSystemType(TypeKind: TTypeKind): TSepiType; overload;
     function GetSystemType(TypeInfo: PTypeInfo): TSepiType; overload;
@@ -375,7 +375,11 @@ end;
 *}
 procedure InternalCreateBuiltinConstants(Self: TSepiSystemUnit);
 begin
+  {$IFDEF FPC} // TODO retrieve FPC version
+  TSepiConstant.Create(Self, 'CompilerVersion', 2.6);
+  {$ELSE}
   TSepiConstant.Create(Self, 'CompilerVersion', CompilerVersion);
+  {$ENDIF}
   TSepiConstant.Create(Self, 'True', True);
   TSepiConstant.Create(Self, 'False', False);
   TSepiConstant.Create(Self, 'MaxInt', MaxInt);

@@ -2,12 +2,12 @@
   This source is only used to compile and install the package.
  }
 
-unit SVCL;
+unit SDL;
 
 interface
 
 uses
-  SvEdits, SvImages, SvLabels;
+  SdAbout, SdDialogs, SdNumber, SdPassword;
 
 implementation
 

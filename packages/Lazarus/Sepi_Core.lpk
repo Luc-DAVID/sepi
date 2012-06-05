@@ -2,12 +2,12 @@
 <CONFIG>
   <Package Version="4">
     <PathDelim Value="\"/>
-    <Name Value="SVCL"/>
+    <Name Value="Sepi_Core"/>
     <CompilerOptions>
       <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <OtherUnitFiles Value="..\..\source\run\SVCL"/>
+        <OtherUnitFiles Value="..\..\source\run\SepiCore"/>
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
       <Other>
@@ -19,16 +19,16 @@
     </CompilerOptions>
     <Files Count="3">
       <Item1>
-        <Filename Value="..\..\source\run\SVCL\SvEdits.pas"/>
-        <UnitName Value="SvEdits"/>
+        <Filename Value="..\..\source\run\SepiCore\SepiAbout.pas"/>
+        <UnitName Value="SepiAbout"/>
       </Item1>
       <Item2>
-        <Filename Value="..\..\source\run\SVCL\SvImages.pas"/>
-        <UnitName Value="SvImages"/>
+        <Filename Value="..\..\source\run\SepiCore\SepiConsts.pas"/>
+        <UnitName Value="SepiConsts"/>
       </Item2>
       <Item3>
-        <Filename Value="..\..\source\run\SVCL\SvLabels.pas"/>
-        <UnitName Value="SvLabels"/>
+        <Filename Value="..\..\source\run\SepiCore\SepiCore.pas"/>
+        <UnitName Value="SepiCore"/>
       </Item3>
     </Files>
     <Type Value="RunTimeOnly"/>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="SDL"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="D:\Developpement\MyLazarus\Test-Libraries\Scripting\Pascal\SepiGIT\source\run\SDL\"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Files Count="7">
+      <Item1>
+        <Filename Value="..\..\source\run\SDL\SdAbout.dfm"/>
+        <Type Value="Text"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\..\source\run\SDL\SdAbout.pas"/>
+        <UnitName Value="SdAbout"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\..\source\run\SDL\SdDialogs.pas"/>
+        <UnitName Value="SdDialogs"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\..\source\run\SDL\SdNumber.dfm"/>
+        <Type Value="Text"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\..\source\run\SDL\SdNumber.pas"/>
+        <UnitName Value="SdNumber"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\..\source\run\SDL\SdPassword.dfm"/>
+        <Type Value="Text"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\..\source\run\SDL\SdPassword.pas"/>
+        <UnitName Value="SdPassword"/>
+      </Item7>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCLBase"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

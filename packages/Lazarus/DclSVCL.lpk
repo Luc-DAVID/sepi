@@ -2,13 +2,13 @@
 <CONFIG>
   <Package Version="4">
     <PathDelim Value="\"/>
-    <Name Value="SVCL"/>
+    <Name Value="DclSVCL"/>
     <CompilerOptions>
       <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <OtherUnitFiles Value="..\..\source\run\SVCL"/>
-        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+        <OtherUnitFiles Value="..\..\source\design\SVCL"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
       </SearchPaths>
       <Other>
         <CompilerMessages>
@@ -17,21 +17,14 @@
         <CompilerPath Value="$(CompPath)"/>
       </Other>
     </CompilerOptions>
-    <Files Count="3">
+    <Files Count="1">
       <Item1>
-        <Filename Value="..\..\source\run\SVCL\SvEdits.pas"/>
-        <UnitName Value="SvEdits"/>
+        <Filename Value="..\..\source\design\SVCL\SVCLReg.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="SVCLReg"/>
       </Item1>
-      <Item2>
-        <Filename Value="..\..\source\run\SVCL\SvImages.pas"/>
-        <UnitName Value="SvImages"/>
-      </Item2>
-      <Item3>
-        <Filename Value="..\..\source\run\SVCL\SvLabels.pas"/>
-        <UnitName Value="SvLabels"/>
-      </Item3>
     </Files>
-    <Type Value="RunTimeOnly"/>
+    <Type Value="DesignTime"/>
     <RequiredPkgs Count="2">
       <Item1>
         <PackageName Value="LCLBase"/>

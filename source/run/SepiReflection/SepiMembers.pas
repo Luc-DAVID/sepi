@@ -38,6 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiMembers;
+{$i ..\..\source\Sepi.inc}
 
 interface
 
@@ -49,6 +50,11 @@ uses
   SepiReflectionCore, SepiReflectionConsts, SepiArrayTypes;
 
 const
+  // TODO FPC http://community.freepascal.org:10000/bboards/message?message_id=245678&forum_id=24082
+  {$IFDEF FPC}
+  vmtSelfPtr: ShortInt = $FFFFFFA8;
+  {$ENDIF}
+
   /// Pas d'index
   NoIndex = Integer($80000000);
 
@@ -297,9 +303,9 @@ type
     procedure MakeFlags;
 
     class function ReadStrFromStream(Stream: TStream): string;
-      {$IF CompilerVersion >= 20} static; {$IFEND}
+      {$IF Defined(FPC) or (CompilerVersion >= 20)} static; {$IFEND}
     class procedure WriteStrToStream(Stream: TStream; const Str: string);
-      {$IF CompilerVersion >= 20} static; {$IFEND}
+      {$IF Defined(FPC) or (CompilerVersion >= 20)} static; {$IFEND}
 
     procedure ListReferences;
     procedure Save(Stream: TStream);
@@ -322,7 +328,7 @@ type
 
     function Equals(AParam: TSepiParam;
       Options: TSepiSignatureCompareOptions = pcoAll): Boolean;
-      {$IF RTLVersion >= 20.0} reintroduce; {$IFEND}
+      {$IF Defined(FPC) or (RTLVersion >= 20.0)} reintroduce; {$IFEND}
     function CompatibleWith(AType: TSepiType): Boolean;
 
     property Owner: TSepiSignature read FOwner;
@@ -416,7 +422,7 @@ type
 
     function Equals(ASignature: TSepiSignature;
       Options: TSepiSignatureCompareOptions = scoAll): Boolean;
-      {$IF RTLVersion >= 20.0} reintroduce; {$IFEND}
+      {$IF Defined(FPC) or (RTLVersion >= 20.0)} reintroduce; {$IFEND}
     function CompatibleWith(const ATypes: array of TSepiType): Boolean;
 
     property Owner: TSepiComponent read FOwner;
@@ -1197,6 +1203,7 @@ const
   hfFieldSize = 0;
 {$IFEND}
 
+
 implementation
 
 uses
@@ -1245,7 +1252,8 @@ type
 const
   // Tailles de structure TTypeData en fonction des types
   RecordTypeDataLengthBase = 2*SizeOf(Cardinal)
-    {$IF CompilerVersion >= 21} + SizeOf(Byte) + SizeOf(Integer) {$IFEND};
+    // TODO Check compatibility with FPC
+    {$IF Defined(FPC) or (CompilerVersion >= 21)} + SizeOf(Byte) + SizeOf(Integer) {$IFEND};
   IntfTypeDataLengthBase =
     SizeOf(Pointer) + SizeOf(TIntfFlagsBase) + SizeOf(TGUID) + 2*SizeOf(Word);
   ClassTypeDataLengthBase =
@@ -1255,7 +1263,7 @@ const
   FieldTableLengthBase = SizeOf(TFieldTable);
   MethodTableLengthBase = SizeOf(TMethodTable);
 
-  {$IF CompilerVersion >= 21}
+  {$IF Defined(FPC) or (CompilerVersion >= 21)}
   MetaClassTypeDataLength = SizeOf(PPTypeInfo);
   {$IFEND}
 
@@ -3243,7 +3251,8 @@ begin
   Assert(Signature.Kind = skProperty);
 
   // Property type RTTI
-  PropInfo.PropType := PropType.TypeInfoRef;
+  // TODO FPC
+  // PropInfo.PropType := PropType.TypeInfoRef;
 
   // Read access
   with PropInfo, ReadAccess do
@@ -3583,7 +3592,7 @@ end;
 *}
 function TSepiRecordType.HasTypeInfo: Boolean;
 begin
-{$IF CompilerVersion < 21}
+{$IF Defined(FPC) or (CompilerVersion < 21)}
   Result := IsManaged;
 {$ELSE}
   Result := True;
@@ -3608,7 +3617,7 @@ end;
   [@inheritDoc]
 *}
 procedure TSepiRecordType.WriteTypeInfo(Stream: TStream);
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
 const
   OpCount: Byte = 0; // Sepi does not know about record ops anyway
   Flags: Byte = 0;   // Unknown
@@ -3645,7 +3654,7 @@ begin
     Stream.WriteBuffer(ManagedField, SizeOf(TManagedField));
   end;
 
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
   // TRecordTypeDataEx
   Stream.WriteBuffer(OpCount, SizeOf(Byte));
   Stream.WriteBuffer(FieldCount, SizeOf(Integer));
@@ -3992,7 +4001,7 @@ begin
       Inc(Count);
   Stream.WriteBuffer(Count, SizeOf(Word));
 
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
   // TIntfMethodTable.RttiCount
   Count := $FFFF; // no more information available
   Stream.WriteBuffer(Count, SizeOf(Word));
@@ -4544,6 +4553,7 @@ begin
   begin
     with IntfTable.Entries[I], FInterfaces[I] do
     begin
+      // TODO FPC
       IID := IntfRef.GUID;
       VTable := IMT;
       IOffset := Offset;
@@ -4613,7 +4623,7 @@ var
   Component: TSepiComponent;
   FieldTable: PFieldTable;
   FieldInfo: PFieldInfo;
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
   InfoEx: PWord;
 {$IFEND}
 begin
@@ -4633,7 +4643,7 @@ begin
 
     // Creating the field table
     GetMem(FieldTable, FieldTableLengthBase + Fields.Count*SizeOf(TFieldInfo)
-      {$IF CompilerVersion >= 21} + SizeOf(Word) {$IFEND});
+      {$IF Defined(FPC) or (CompilerVersion >= 21)} + SizeOf(Word) {$IFEND});
     VMTEntries[vmtFieldTable] := FieldTable;
 
     // Basic information
@@ -4652,7 +4662,7 @@ begin
       end;
     end;
 
-    {$IF CompilerVersion >= 21}
+    {$IF Defined(FPC) or (CompilerVersion >= 21)}
     // Extended information - we write nothing at the moment
     InfoEx := PWord(FieldInfo);
     InfoEx^ := 0;
@@ -4673,7 +4683,7 @@ var
   Component: TSepiComponent;
   MethodTable: PMethodTable;
   MethodInfo, NextMethodInfo: PMethodInfo;
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
   InfoEx: PWord;
 {$IFEND}
 begin
@@ -4715,7 +4725,7 @@ begin
       end;
     end;
 
-    {$IF CompilerVersion >= 21}
+    {$IF Defined(FPC) or (CompilerVersion >= 21)}
     // Extended information - we write nothing at the moment
     InfoEx := PWord(MethodInfo);
     InfoEx^ := 0;
@@ -5637,7 +5647,7 @@ end;
 *}
 procedure TSepiMetaClass.WriteTypeInfo(Stream: TStream);
 begin
-  {$IF CompilerVersion >= 21}
+  {$IF Defined(FPC) or (CompilerVersion >= 21)}
   inherited;
 
   SepiClass.WriteTypeInfoRefToStream(Stream);

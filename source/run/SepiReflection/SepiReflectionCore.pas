@@ -38,7 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiReflectionCore;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 {$ASSERTIONS ON}
@@ -238,9 +238,9 @@ type
     function GetChildByName(const ChildName: string): TSepiComponent;
   protected
     class function ReadStrFromStream(Stream: TStream): string;
-      {$IF CompilerVersion >= 20} static; {$IFEND}
+    {$IF Defined(FPC) or (CompilerVersion >= 20)} static; {$IFEND}
     class procedure WriteStrToStream(Stream: TStream; const Str: string);
-      {$IF CompilerVersion >= 20} static; {$IFEND}
+    {$IF Defined(FPC) or (CompilerVersion >= 20)} static; {$IFEND}
 
     procedure AddChild(Child: TSepiComponent); virtual;
     procedure RemoveChild(Child: TSepiComponent); virtual;
@@ -437,7 +437,7 @@ type
     procedure WriteTypeInfoRefToStream(Stream: TStream);
 
     function Equals(Other: TSepiType): Boolean;
-      {$IF RTLVersion >= 20.0} reintroduce; {$IFEND} virtual;
+    {$IF Defined(FPC) or (RTLVersion >= 20.0)} reintroduce;{$IFEND} virtual;
     function CompatibleWith(AType: TSepiType): Boolean; virtual;
 
     property Kind: TTypeKind read FKind;
@@ -634,7 +634,7 @@ type
     FForwardClassIntfChildren: TObjectList; /// Classes et interfaces forward
 
     class function ReadStrFromStream(Stream: TStream): string;
-      {$IF CompilerVersion >= 20} static; {$IFEND}
+    {$IF Defined(FPC) or (CompilerVersion >= 20)} static; {$IFEND}
 
     function GetChildData(const Name: string): TSepiLazyLoadChildData;
     function CanLoad(const Data: TSepiLazyLoadChildData): Boolean;
@@ -798,7 +798,7 @@ type
     destructor Destroy; override;
 
     class function IsValidConstType(SepiType: TSepiType): Boolean;
-      {$IF CompilerVersion >= 20} static; {$IFEND}
+    {$IF Defined(FPC) or (CompilerVersion >= 20)} static; {$IFEND}
 
     property ConstType: TSepiType read FType;
     property ValuePtr: Pointer read FValuePtr;

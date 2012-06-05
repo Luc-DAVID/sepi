@@ -2,12 +2,12 @@
   This source is only used to compile and install the package.
  }
 
-unit SVCL;
+unit Sepi_Core;
 
 interface
 
 uses
-  SvEdits, SvImages, SvLabels;
+  SepiAbout, SepiConsts, SepiCore;
 
 implementation
 

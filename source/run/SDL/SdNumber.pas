@@ -125,7 +125,9 @@ begin
     Top := 16;
     Width := 65;
     AutoSelect := False;
+    {$IFNDEF FPC}
     EditorEnabled := False;
+    {$ENDIF}
     TabOrder := 0;
   end;
 end;

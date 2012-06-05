@@ -2,12 +2,13 @@
   This source is only used to compile and install the package.
  }
 
-unit SVCL;
+unit SepiReflection;
 
 interface
 
 uses
-  SvEdits, SvImages, SvLabels;
+  SepiArrayTypes, SepiMembers, SepiOrdTypes, SepiReflectionConsts, 
+  SepiReflectionCore, SepiStrTypes, SepiSystemUnit;
 
 implementation
 

@@ -42,7 +42,11 @@ unit SdDialogs;
 interface
 
 uses
-  Classes, Dialogs, Controls, Graphics;
+  Classes, Dialogs, Controls, Graphics
+  {$IFDEF FPC}
+  , InterfaceBase, Forms
+  {$ENDIF}
+  ;
 
 {$IFDEF LINUX}
 const
@@ -239,7 +243,7 @@ function QueryNumber(const Title, Prompt: string;
 implementation
 
 uses
-  Windows, Forms, StdCtrls, Math, SdPassword, SdAbout, SdNumber, ScConsts;
+  Windows,{ Forms,} StdCtrls, Math, SdPassword, SdAbout, SdNumber, ScConsts;
 
 {-------------------}
 { Routines globales }
@@ -261,7 +265,11 @@ begin
   AText := PChar(Text);
   ATitle := PChar(Title);
   AFlags := Flags or MB_APPLMODAL; // Ajout du style Modal
+  {$IFDEF FPC}
+  Result := MessageBox(WidgetSet.AppHandle, AText, ATitle, AFlags);
+  {$ELSE}
   Result := MessageBox(Application.Handle, AText, ATitle, AFlags);
+  {$ENDIF}
 end;
 {$ENDIF}
 

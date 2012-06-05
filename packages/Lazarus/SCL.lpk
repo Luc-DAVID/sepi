@@ -111,7 +111,7 @@
         <UnitName Value="ScZLib"/>
       </Item23>
     </Files>
-    <Type Value="RunAndDesignTime"/>
+    <Type Value="RunTimeOnly"/>
     <RequiredPkgs Count="2">
       <Item1>
         <PackageName Value="LCLBase"/>
