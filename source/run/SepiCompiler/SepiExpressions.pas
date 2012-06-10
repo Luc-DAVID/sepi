@@ -38,6 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiExpressions;
+{$i ..\..\Sepi.inc}
 
 interface
 
@@ -45,7 +46,7 @@ uses
   SysUtils, Classes, Math, TypInfo, ScUtils, ScInterfaces, ScCompilerMagic,
   ScLowLevel, ScIntegerSets, ScTypInfo, SepiReflectionCore, SepiOrdTypes,
   SepiStrTypes, SepiArrayTypes, SepiMembers, SepiSystemUnit, SepiOpCodes,
-  SepiRuntimeOperations, SepiCompiler, SepiCompilerErrors, SepiCompilerConsts,
+  SepiRuntimeOperations, SepiCompilerErrors, SepiCompilerConsts, SepiCompiler,
   SepiAsmInstructions;
 
 type
@@ -9817,7 +9818,7 @@ const
     'VInteger', 'VBoolean', 'VChar', 'VExtended', 'VString', 'VPointer',
     'VPChar', 'VObject', 'VClass', 'VWideChar', 'VPWideChar', 'VAnsiString',
     'VCurrency', 'VVariant', 'VInterface', 'VWideString', 'VInt64',
-    'VUnicodeString'
+    {$IFDEF FPC} 'VQWord', {$ENDIF} 'VUnicodeString'
   );
   VTypeFieldName = 'VType';
   ByAddressVTypes = [vtExtended, vtString, vtVariant, vtInt64];

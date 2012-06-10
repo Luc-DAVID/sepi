@@ -39,6 +39,7 @@ statement from your version.
 *}
 unit SepiSystemUnit;
 {$i ..\..\source\Sepi.inc}
+
 interface
 
 {$ASSERTIONS ON}

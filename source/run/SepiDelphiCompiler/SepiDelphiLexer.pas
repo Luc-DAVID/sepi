@@ -38,8 +38,12 @@ statement from your version.
   @version 1.0
 *}
 unit SepiDelphiLexer;
+{$i ..\..\source\Sepi.inc}
 
 interface
+{$IFDEF FPC}
+{$HINT Package SepiDelphiCompiler : Debugging information not available - switched off / compiler error}
+{$ENDIF}
 
 {$D-,L-}
 

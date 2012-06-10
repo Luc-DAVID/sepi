@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -34,6 +34,10 @@ statement from your version.
 
 unit GeneratorOptions;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
@@ -41,7 +45,7 @@ uses
 
 type
   {*
-    Options du générateur
+    Options du gÃ©nÃ©rateur
     @author sjrd
     @version 1.0
   *}
@@ -49,7 +53,7 @@ type
   private
     FSourceFileName: TFileName; /// Nom du fichier source
     FDestDir: TFileName;        /// Nom du dossier de destination
-    FLanguageName: string;      /// Nom du langage à compiler
+    FLanguageName: string;      /// Nom du langage Ã  compiler
   public
     constructor Create;
 
@@ -63,7 +67,7 @@ type
 implementation
 
 {*
-  Crée les options du générateur
+  CrÃ©e les options du gÃ©nÃ©rateur
 *}
 constructor TGeneratorOptions.Create;
 var

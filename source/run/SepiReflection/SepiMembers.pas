@@ -50,9 +50,9 @@ uses
   SepiReflectionCore, SepiReflectionConsts, SepiArrayTypes;
 
 const
-  // TODO FPC http://community.freepascal.org:10000/bboards/message?message_id=245678&forum_id=24082
+  // TODO: FPC http://community.freepascal.org:10000/bboards/message?message_id=245678&forum_id=24082
   {$IFDEF FPC}
-  vmtSelfPtr: ShortInt = $FFFFFFA8;
+  vmtSelfPtr = $FFFFFFA8;
   {$ENDIF}
 
   /// Pas d'index
@@ -4553,11 +4553,14 @@ begin
   begin
     with IntfTable.Entries[I], FInterfaces[I] do
     begin
-      // TODO FPC
+      {$IFDEF FPC}
+      IID := @IntfRef.GUID;
+      {$ELSE}
       IID := IntfRef.GUID;
+      ImplGetter := 0;
+      {$ENDIF}
       VTable := IMT;
       IOffset := Offset;
-      ImplGetter := 0;
     end;
   end;
 end;
@@ -5891,7 +5894,7 @@ begin
   Count := 1;
   Stream.WriteBuffer(Count, SizeOf(Word));
 
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
   // TIntfMethodTable.RttiCount
   Count := $FFFF; // no more information available
   Stream.WriteBuffer(Count, SizeOf(Word));

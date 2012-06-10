@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="Sepi_Compiler"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <Libraries Value="lib\$(TargetCPU)-$(TargetOS)"/>
+        <OtherUnitFiles Value="..\..\source\run\SepiCompiler;..\..\source\run\SepiReflection;..\..\source\run\SepiInterpreter"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <SyntaxMode Value="Delphi"/>
+        </SyntaxOptions>
+      </Parsing>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Files Count="13">
+      <Item1>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiCompilerConsts.pas"/>
+        <UnitName Value="SepiCompilerConsts"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiCompilerErrors.pas"/>
+        <UnitName Value="SepiCompilerErrors"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiCompilerUtils.pas"/>
+        <UnitName Value="SepiCompilerUtils"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiDelphiLikeCompilerUtils.pas"/>
+        <UnitName Value="SepiDelphiLikeCompilerUtils"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiExpressions.pas"/>
+        <UnitName Value="SepiExpressions"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiInstructions.pas"/>
+        <UnitName Value="SepiInstructions"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiLexerUtils.pas"/>
+        <UnitName Value="SepiLexerUtils"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiLL1ParserUtils.pas"/>
+        <UnitName Value="SepiLL1ParserUtils"/>
+      </Item8>
+      <Item9>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiParserUtils.pas"/>
+        <UnitName Value="SepiParserUtils"/>
+      </Item9>
+      <Item10>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiParseTrees.pas"/>
+        <UnitName Value="SepiParseTrees"/>
+      </Item10>
+      <Item11>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiStdCompilerNodes.pas"/>
+        <UnitName Value="SepiStdCompilerNodes"/>
+      </Item11>
+      <Item12>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiAsmInstructions.pas"/>
+        <UnitName Value="SepiAsmInstructions"/>
+      </Item12>
+      <Item13>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiCompiler.pas"/>
+        <UnitName Value="SepiCompiler"/>
+      </Item13>
+    </Files>
+    <Type Value="RunAndDesignTime"/>
+    <RequiredPkgs Count="3">
+      <Item1>
+        <PackageName Value="Sepi_Interpreter"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="Sepi_Reflection"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
+      </Item3>
+    </RequiredPkgs>
+    <UsageOptions>
+      <LibraryPath Value="lib\i386-win32"/>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

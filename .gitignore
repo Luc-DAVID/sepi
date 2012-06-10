@@ -3,3 +3,7 @@
 *.dcu
 *.identcache
 __history/
+
+/packages/Lazarus/SepiCompiler.pas
+/packages/Lazarus/SepiDelphiCompiler.pas
+/packages/Lazarus/SepiDelphiCompiler.pas

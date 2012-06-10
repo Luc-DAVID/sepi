@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -33,16 +33,19 @@ statement from your version.
 -------------------------------------------------------------------------------}
 
 {*
-  Importeur d'unité native Delphi dans Sepi
+  Importeur d'unitÃ© native Delphi dans Sepi
   @author sjrd
   @version 1.0
 *}
-program SepiDelphiUnitImporter;
 
+program SepiDelphiUnitImporter;
 {$APPTYPE CONSOLE}
 
 uses
+  {$IFDEF FPC}
   Windows,
+  Interfaces,
+  {$ENDIF}
   SysUtils,
   Classes,
   Registry,
@@ -88,7 +91,7 @@ type
   TFileNamesArray = array of TFileNames;
 
 {*
-  Décompose une ligne d'un CSV pour produire les noms de fichiers à traiter
+  DÃ©compose une ligne d'un CSV pour produire les noms de fichiers Ã  traiter
 *}
 function GetFileNames(Context: TImporterContext;
   const Line: string): TFileNames;
@@ -136,11 +139,11 @@ begin
 end;
 
 {*
-  Charge une unité
+  Charge une unitÃ©
   @param Context    Contexte de compilation
-  @param Sender     Racine Sepi qui demande le chargement d'une unité
-  @param UnitName   Nom de l'unité à charger
-  @return L'unité chargée, ou nil si l'unité n'est pas trouvée
+  @param Sender     Racine Sepi qui demande le chargement d'une unitÃ©
+  @param UnitName   Nom de l'unitÃ© Ã  charger
+  @return L'unitÃ© chargÃ©e, ou nil si l'unitÃ© n'est pas trouvÃ©e
 *}
 function LoadUnit(Context: TImporterContext; Sender: TSepiRoot;
   const UnitName: string): TSepiUnit;
@@ -183,7 +186,7 @@ const
 var
   Source: string;
   Index: Integer;
-  FromText, ToText: string;
+  FromText, ToText, LineBreak : string;
   FromLineCount, ToLineCount: Integer;
 
   procedure ReadBlock(var Text: string; var LineCount: Integer);
@@ -193,7 +196,7 @@ var
 
     while (Index < Overloads.Count) and (Overloads[Index] <> Delimiter) do
     begin
-      Text := Text + Overloads[Index] + SourceFile.LineBreak;
+      Text := Text + Overloads[Index] + LineBreak;
       Inc(LineCount);
       Inc(Index);
     end;
@@ -205,6 +208,17 @@ var
   end;
 
 begin
+  {$IFDEF FPC}
+  Case SourceFile.TextLineBreakStyle of
+    tlbsLF   : LineBreak:=#10;
+    tlbsCRLF : LineBreak:=#13#10;
+    tlbsCR   : LineBreak:=#13;
+  end;
+  {$ELSE}
+  LineBreak := SourceFile.LineBreak;
+  {$ENDIF}
+
+
   Source := SourceFile.Text;
 
   Index := 0;
@@ -220,7 +234,7 @@ begin
     // Pad ToText so that it has the same number of lines as FromText
     while ToLineCount < FromLineCount do
     begin
-      ToText := ToText + SourceFile.LineBreak;
+      ToText := ToText + LineBreak;
       Inc(ToLineCount);
     end;
 
@@ -238,7 +252,7 @@ end;
   Charge un fichier source Delphi
   @param Context      Contexte d'importation
   @param FileNames    Noms des fichiers
-  @param SourceFile   Liste de chaînes destination
+  @param SourceFile   Liste de chaÃ®nes destination
 *}
 procedure LoadSourceFile(Context: TImporterContext; const FileNames: TFileNames;
   SourceFile: TStrings);
@@ -268,10 +282,10 @@ begin
 end;
 
 {*
-  Gestionnaire d'événement OnNeedFile des analyseurs lexicaux
+  Gestionnaire d'Ã©vÃ©nement OnNeedFile des analyseurs lexicaux
   @param Context    Contexte de compilation
   @param Sender     Analyseur syntaxique qui a besoin d'un fichier
-  @param FileName   Nom du fichier recherché
+  @param FileName   Nom du fichier recherchÃ©
 *}
 procedure LexerNeedFile(Context: TImporterContext; Sender: TSepiCustomLexer;
   var FileName: TFileName);
@@ -296,9 +310,9 @@ begin
 end;
 
 {*
-  Trouve le noeud le plus à droite d'un sous-arbre syntaxique
+  Trouve le noeud le plus Ã  droite d'un sous-arbre syntaxique
   @param Root   Racine du sous-arbre
-  @return Noeud le plus à droite du sous-arbre
+  @return Noeud le plus Ã  droite du sous-arbre
 *}
 function FindRightMostNode(Root: TSepiParseTreeNode): TSepiParseTreeNode;
 begin
@@ -315,7 +329,7 @@ end;
 {*
   Compile un fichier ressource .rc avec brcc32
   @param Context      Contexte d'importation
-  @param RCFileName   Nom du fichier .rc à compiler
+  @param RCFileName   Nom du fichier .rc Ã  compiler
 *}
 procedure CompileResource(Context: TImporterContext;
   const RCFileName: TFileName);
@@ -486,11 +500,11 @@ end;
 
 {*
   Effectue l'import d'un fichier
-  Le fichier à importer peut être directement un .pas (import rapide), ou un
-  fichier .csv détaillant une liste de fichiers .pas avec leurs options
+  Le fichier Ã  importer peut Ãªtre directement un .pas (import rapide), ou un
+  fichier .csv dÃ©taillant une liste de fichiers .pas avec leurs options
   respectives.
   @param Context           Contexte de compilation
-  @param SourceFileName    Nom du fichier source à traiter
+  @param SourceFileName    Nom du fichier source Ã  traiter
 *}
 procedure ProcessImport(Context: TImporterContext;
   const SourceFileName: TFileName);
@@ -578,8 +592,11 @@ begin
 
   try
     Errors := TSepiCompilerErrorList.Create;
+    {$IFDEF FPC}
+    // TODO FPC : @Errors.OnAddError := @ErrorAdded;
+    {$ELSE}
     @Errors.OnAddError := @ErrorAdded;
-
+    {$ENDIF}
     try
       // Load importer context
       try

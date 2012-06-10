@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -39,6 +39,10 @@ statement from your version.
 *}
 unit SepiCompilerErrors;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
@@ -47,7 +51,7 @@ uses
 
 type
   {*
-    Exception déclenchée en cas d'erreur fatale de compilation
+    Exception dÃ©clenchÃ©e en cas d'erreur fatale de compilation
   *}
   ESepiCompilerFatalError = class(Exception);
 
@@ -97,9 +101,9 @@ type
   end;
 
   {*
-    Type de l'événement OnAddError de TSepiCompilerErrorList
-    @param Sender   Objet qui a déclenché l'événement
-    @param Error    Erreur ajoutée
+    Type de l'Ã©vÃ©nement OnAddError de TSepiCompilerErrorList
+    @param Sender   Objet qui a dÃ©clenchÃ© l'Ã©vÃ©nement
+    @param Error    Erreur ajoutÃ©e
   *}
   TSepiAddErrorEvent = procedure(Sender: TObject;
     Error: TSepiCompilerError) of object;
@@ -112,7 +116,7 @@ type
   TSepiCompilerErrorList = class(TObjectList)
   private
     FCurrentFileName: TFileName;     /// Nom du fichier courant
-    FOnAddError: TSepiAddErrorEvent; /// Déclenché à l'ajout d'une erreur
+    FOnAddError: TSepiAddErrorEvent; /// DÃ©clenchÃ© Ã  l'ajout d'une erreur
 
     function GetErrors(Index: Integer): TSepiCompilerError;
 
@@ -149,7 +153,7 @@ type
   end;
 
 const
-  /// Position non renseignée
+  /// Position non renseignÃ©e
   SepiNoPosition: TSepiSourcePosition = (FileName: ''; Line: 0; Col: 0);
 
   /// Nombre maximum d'erreurs avant d'abandonner la compilation
@@ -166,7 +170,7 @@ implementation
 {--------------------------}
 
 {*
-  Crée une erreur de compilation Sepi
+  CrÃ©e une erreur de compilation Sepi
   @param AErrorMsg   Message d'erreur
   @param AKind       Type d'erreur
   @param APosition   Position dans le source
@@ -182,7 +186,7 @@ begin
 end;
 
 {*
-  Crée une erreur de compilation Sepi
+  CrÃ©e une erreur de compilation Sepi
   @param AErrorMsg   Message d'erreur
   @param APosition   Position dans le source
 *}
@@ -193,12 +197,12 @@ begin
 end;
 
 {*
-  Crée une erreur de compilation Sepi
+  CrÃ©e une erreur de compilation Sepi
   @param AErrorMsg   Message d'erreur
   @param AKind       Type d'erreur
   @param AFileName   Nom du fichier
-  @param ALine       Ligne (défaut = 0)
-  @param ACol        Colonne (défaut = 0)
+  @param ALine       Ligne (dÃ©faut = 0)
+  @param ACol        Colonne (dÃ©faut = 0)
 *}
 constructor TSepiCompilerError.Create(const AErrorMsg: string;
   AKind: TSepiErrorKind; const AFileName: TFileName = ''; ALine: Integer = 0;
@@ -214,11 +218,11 @@ begin
 end;
 
 {*
-  Crée une erreur de compilation Sepi de type Erreur
+  CrÃ©e une erreur de compilation Sepi de type Erreur
   @param AErrorMsg   Message d'erreur
   @param AFileName   Nom du fichier
-  @param ALine       Ligne (défaut = 0)
-  @param ACol        Colonne (défaut = 0)
+  @param ALine       Ligne (dÃ©faut = 0)
+  @param ACol        Colonne (dÃ©faut = 0)
 *}
 constructor TSepiCompilerError.Create(const AErrorMsg: string;
   const AFileName: TFileName = ''; ALine: Integer = 0; ACol: Integer = 0);
@@ -227,8 +231,8 @@ begin
 end;
 
 {*
-  Représentation textuelle de l'erreur
-  @return Représentation textuelle de l'erreur
+  ReprÃ©sentation textuelle de l'erreur
+  @return ReprÃ©sentation textuelle de l'erreur
 *}
 function TSepiCompilerError.GetAsText: string;
 begin
@@ -243,7 +247,7 @@ end;
 {*
   Tableau zero-based des erreurs
   @param Index   Index de l'erreur
-  @return Erreur à l'index spécifié
+  @return Erreur Ã  l'index spÃ©cifiÃ©
 *}
 function TSepiCompilerErrorList.GetErrors(Index: Integer): TSepiCompilerError;
 begin
@@ -279,9 +283,9 @@ begin
 end;
 
 {*
-  Ajoute une erreur à la liste, avec une position explicite
+  Ajoute une erreur Ã  la liste, avec une position explicite
   Si c'est une erreur fatale, une exception ESepiCompilerFatalError est ensuite
-  déclenchée.
+  dÃ©clenchÃ©e.
   @param ErrorMsg   Message d'erreur
   @param Kind       Type d'erreur
   @param Position   Position dans le source
@@ -301,7 +305,7 @@ begin
 end;
 
 {*
-  Ajoute une erreur de type Erreur à la liste, avec une position explicite
+  Ajoute une erreur de type Erreur Ã  la liste, avec une position explicite
   @param ErrorMsg   Message d'erreur
   @param Position   Position dans le source
 *}
@@ -312,14 +316,14 @@ begin
 end;
 
 {*
-  Ajoute une erreur à la liste
+  Ajoute une erreur Ã  la liste
   Si c'est une erreur fatale, une exception ESepiCompilerFatalError est ensuite
-  déclenchée.
+  dÃ©clenchÃ©e.
   @param ErrorMsg   Message d'erreur
   @param Kind       Type d'erreur
   @param FileName   Nom du fichier
-  @param Line       Ligne (défaut = 0)
-  @param Col        Colonne (défaut = 0)
+  @param Line       Ligne (dÃ©faut = 0)
+  @param Col        Colonne (dÃ©faut = 0)
   @throws ESepiCompilerFatalError L'erreur est une erreur fatale
 *}
 function TSepiCompilerErrorList.MakeError(const ErrorMsg: string;
@@ -336,11 +340,11 @@ begin
 end;
 
 {*
-  Ajoute une erreur de type Erreur à la liste
+  Ajoute une erreur de type Erreur Ã  la liste
   @param ErrorMsg   Message d'erreur
   @param FileName   Nom du fichier
-  @param Line       Ligne (défaut = 0)
-  @param Col        Colonne (défaut = 0)
+  @param Line       Ligne (dÃ©faut = 0)
+  @param Col        Colonne (dÃ©faut = 0)
 *}
 function TSepiCompilerErrorList.MakeError(const ErrorMsg: string;
   const FileName: TFileName; Line: Integer = 0;
@@ -350,13 +354,13 @@ begin
 end;
 
 {*
-  Ajoute une erreur à la liste, dans le fichier courant
+  Ajoute une erreur Ã  la liste, dans le fichier courant
   Si c'est une erreur fatale, une exception ESepiCompilerFatalError est ensuite
-  déclenchée.
+  dÃ©clenchÃ©e.
   @param ErrorMsg   Message d'erreur
   @param Kind       Type d'erreur
-  @param Line       Ligne (défaut = 0)
-  @param Col        Colonne (défaut = 0)
+  @param Line       Ligne (dÃ©faut = 0)
+  @param Col        Colonne (dÃ©faut = 0)
   @throws ESepiCompilerFatalError L'erreur est une erreur fatale
 *}
 function TSepiCompilerErrorList.MakeError(const ErrorMsg: string;
@@ -367,10 +371,10 @@ begin
 end;
 
 {*
-  Ajoute une erreur de type Erreur à la liste, dans le fichier courant
+  Ajoute une erreur de type Erreur Ã  la liste, dans le fichier courant
   @param ErrorMsg   Message d'erreur
-  @param Line       Ligne (défaut = 0)
-  @param Col        Colonne (défaut = 0)
+  @param Line       Ligne (dÃ©faut = 0)
+  @param Col        Colonne (dÃ©faut = 0)
 *}
 function TSepiCompilerErrorList.MakeError(const ErrorMsg: string;
   Line: Integer = 0; Col: Integer = 0): TSepiCompilerError;
@@ -379,7 +383,7 @@ begin
 end;
 
 {*
-  Ajoute une erreur fatale si une ou plusieurs erreurs sont présentes
+  Ajoute une erreur fatale si une ou plusieurs erreurs sont prÃ©sentes
 *}
 procedure TSepiCompilerErrorList.CheckForErrors;
 var

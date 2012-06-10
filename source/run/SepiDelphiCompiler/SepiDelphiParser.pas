@@ -38,13 +38,14 @@ statement from your version.
   @version 1.0
 *}
 unit SepiDelphiParser;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 {$D-,L-}
 
+
 uses
-  SysUtils, Contnrs, SepiCompilerErrors, SepiParseTrees, SepiParserUtils,
+  SysUtils, Contnrs, SepiCompilerErrors, SepiParseTrees,
   SepiLL1ParserUtils, SepiDelphiLexer;
 
 const

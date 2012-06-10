@@ -2200,12 +2200,12 @@ end;
   Écrit les données d'attribut dans un flux
 *}
 procedure TSepiType.WriteAttrData(Stream: TStream);
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
 const
   EmptyAttrDataLen: Word = SizeOf(Word);
 {$IFEND}
 begin
-  {$IF CompilerVersion >= 21}
+  {$IF Defined(FPC) or (CompilerVersion >= 21)}
   Stream.WriteBuffer(EmptyAttrDataLen, SizeOf(Word));
   {$IFEND}
 end;
@@ -3113,7 +3113,11 @@ begin
   // Mark my own units as destructing
   for I := UnitCount-1 downto 0 do
     if Units[I].Owner = Self then
-      TSepiRootFork(Units[I]).Destroying;
+    {$IFDEF FPC}
+    ;// TODO FPC TSepiRootFork(Units[I]).Destroying;
+    {$ELSE}
+    TSepiRootFork(Units[I]).Destroying;
+    {$ENDIF}
 
   // Free units the way I want to
   for I := UnitCount-1 downto 0 do

@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -38,6 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit ImporterContext;
+{$i ..\..\source\Sepi.inc}
 
 interface
 
@@ -61,7 +62,7 @@ type
     FBDSVersion: string; /// Version de BDS dans la BdR
 
     FBDSRootDir: string;        /// Dossier racine de BDS
-    FDirectoryConsts: TStrings; /// Constantes représentant des répertoires
+    FDirectoryConsts: TStrings; /// Constantes reprÃ©sentant des rÃ©pertoires
     FBDSBrowsingPath: string;   /// Chemin de recherche BDS
     FSepiBrowsingPath: string;  /// Chemin de recherche Sepi
 
@@ -70,7 +71,7 @@ type
     FOutputDir: TFileName;    /// Dossier de destination
     FResourcesDir: TFileName; /// Dossier de destination des ressources
 
-    FSkipIfNotExists: Boolean; /// Ignorer les unités non trouvées
+    FSkipIfNotExists: Boolean; /// Ignorer les unitÃ©s non trouvÃ©es
     FProduceLazyLoad: Boolean; /// Produire du code lazy-load
     FExcludeRoutines: Boolean; /// Exclure les routines
 
@@ -128,11 +129,11 @@ const
 implementation
 
 {*
-  Crée le contexte de compilation
-  @param AErrors       Gestionnaire d'erreurs à utiliser
+  CrÃ©e le contexte de compilation
+  @param AErrors       Gestionnaire d'erreurs Ã  utiliser
   @param ABDSVendor    Nom du revendeur de BDS dans la BdR
   @param ABDSVersion   Version de BDS
-  @raise EBDSVersionNotInstalled Cette version de BDS n'est pas installée
+  @raise EBDSVersionNotInstalled Cette version de BDS n'est pas installÃ©e
 *}
 constructor TImporterContext.Create(AErrors: TSepiCompilerErrorList;
   const ABDSVendor, ABDSVersion: string);
@@ -153,12 +154,12 @@ begin
 end;
 
 {*
-  Crée le contexte de compilation
-  Dans cette variante, le nom du revendeur de BDS est détecté automatiquement
-  d'après la version
-  @param AErrors       Gestionnaire d'erreurs à utiliser
+  CrÃ©e le contexte de compilation
+  Dans cette variante, le nom du revendeur de BDS est dÃ©tectÃ© automatiquement
+  d'aprÃ¨s la version
+  @param AErrors       Gestionnaire d'erreurs Ã  utiliser
   @param ABDSVersion   Version de BDS
-  @raise EBDSVersionNotInstalled Cette version de BDS n'est pas installée
+  @raise EBDSVersionNotInstalled Cette version de BDS n'est pas installÃ©e
 *}
 constructor TImporterContext.Create(AErrors: TSepiCompilerErrorList;
   const ABDSVersion: string);
@@ -177,11 +178,11 @@ begin
 end;
 
 {*
-  Trouve le revendeur d'une version de BDS donnée
+  Trouve le revendeur d'une version de BDS donnÃ©e
   @param Errors       Gestionnaire d'erreurs
   @param BDSVersion   Version de BDS
   @return Revendeur de cette version
-  @raise EBDSVersionNotInstalled Cette version de BDS n'est pas installée
+  @raise EBDSVersionNotInstalled Cette version de BDS n'est pas installÃ©e
 *}
 class function TImporterContext.FindVendor(Errors: TSepiCompilerErrorList;
   const BDSVersion: string): string;
@@ -242,7 +243,7 @@ end;
 
 {*
   Lit les infos sur BDS depuis la base de registres
-  @raise EBDSVersionNotInstalled Cette version de BDS n'est pas installée
+  @raise EBDSVersionNotInstalled Cette version de BDS n'est pas installÃ©e
 *}
 procedure TImporterContext.LoadFromRegistry;
 begin
@@ -281,8 +282,8 @@ end;
 
 {*
   Remplace toutes les macros par leurs valeurs
-  @param Str   Chaîne source
-  @return Str dans laquelle chaque $(X) est remplacé par la valeur de X
+  @param Str   ChaÃ®ne source
+  @return Str dans laquelle chaque $(X) est remplacÃ© par la valeur de X
 *}
 function TImporterContext.ReplaceMacros(const Str: string): string;
 var
@@ -299,11 +300,11 @@ end;
 
 {*
   Cherche un fichier dans un chemin de recherche
-  Le chemin de recherche peut contenir des constantes de la forme $(X) où X est
+  Le chemin de recherche peut contenir des constantes de la forme $(X) oÃ¹ X est
   un nom parmi les noms de DirectoryConsts.
-  @param FileName       Nom du fichier à chercher
+  @param FileName       Nom du fichier Ã  chercher
   @param BrowsingPath   Chemin de recherche
-  @return Nom du fichier complet trouvé, où une chaîne vide si non trouvé
+  @return Nom du fichier complet trouvÃ©, oÃ¹ une chaÃ®ne vide si non trouvÃ©
 *}
 function TImporterContext.SearchFile(const FileName: TFileName;
   const BrowsingPath: string): TFileName;
@@ -313,8 +314,8 @@ end;
 
 {*
   Cherche un fichier dans le chemin de recherche BDS
-  @param FileName   Nom du fichier à chercher
-  @return Nom du fichier complet trouvé, où une chaîne vide si non trouvé
+  @param FileName   Nom du fichier Ã  chercher
+  @return Nom du fichier complet trouvÃ©, oÃ¹ une chaÃ®ne vide si non trouvÃ©
 *}
 function TImporterContext.SearchBDSFile(const FileName: TFileName): TFileName;
 begin
@@ -323,8 +324,8 @@ end;
 
 {*
   Cherche un fichier dans le chemin de recherche Sepi
-  @param FileName   Nom du fichier à chercher
-  @return Nom du fichier complet trouvé, où une chaîne vide si non trouvé
+  @param FileName   Nom du fichier Ã  chercher
+  @return Nom du fichier complet trouvÃ©, oÃ¹ une chaÃ®ne vide si non trouvÃ©
 *}
 function TImporterContext.SearchSepiFile(const FileName: TFileName): TFileName;
 begin

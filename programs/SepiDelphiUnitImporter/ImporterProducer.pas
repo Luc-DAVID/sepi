@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -33,11 +33,12 @@ statement from your version.
 -------------------------------------------------------------------------------}
 
 {*
-  Producteur d'importeur d'unité native dans Sepi
+  Producteur d'importeur d'unitÃ© native dans Sepi
   @author sjrd
   @version 1.0
 *}
 unit ImporterProducer;
+{$i ..\..\source\Sepi.inc}
 
 interface
 
@@ -49,7 +50,7 @@ uses
 
 type
   {*
-    Producteur d'importeur d'unité native dans Sepi
+    Producteur d'importeur d'unitÃ© native dans Sepi
     @author sjrd
     @version 1.0
   *}
@@ -58,15 +59,15 @@ type
     TemplateDir: TFileName; /// Dossier des templates
 
     SepiRoot: TSepiRoot;      /// Racine Sepi
-    SepiUnit: TSepiUnit;      /// Unité Sepi
-    ProducedUnitName: string; /// Surcharge du nom de l'unité produite
+    SepiUnit: TSepiUnit;      /// UnitÃ© Sepi
+    ProducedUnitName: string; /// Surcharge du nom de l'unitÃ© produite
 
     UsesList: TStrings; /// Liste des uses dans l'importeur produit
 
     TypeCount: Integer;     /// Nombre de types avec RTTI
-    MethodCount: Integer;   /// Nombre de méthodes avec adresse
+    MethodCount: Integer;   /// Nombre de mÃ©thodes avec adresse
     VariableCount: Integer; /// Nombre de variables
-    LazyLoad: Boolean;      /// Indique si l'unité devrait être chargée en lazy
+    LazyLoad: Boolean;      /// Indique si l'unitÃ© devrait Ãªtre chargÃ©e en lazy
 
     function ProduceUsesList: string;
     function Produce: string;
@@ -159,9 +160,9 @@ const // don't localize
 {-----------------}
 
 {*
-  Produit un importeur pour une unité Sepi
-  @param SepiUnit           Unité Sepi
-  @param ProducedUnitName   Surcharge du nom de l'unité produite
+  Produit un importeur pour une unitÃ© Sepi
+  @param SepiUnit           UnitÃ© Sepi
+  @param ProducedUnitName   Surcharge du nom de l'unitÃ© produite
   @return Code de l'importeur
 *}
 function ProduceImporter(SepiUnit: TSepiUnit;
@@ -176,10 +177,10 @@ end;
 {-----------------------------}
 
 {*
-  Crée un producteur d'importeur d'unité Sepi
-  @param ASepiUnit           Unité Sepi
-  @param AProducedUnitName   Surcharge du nom de l'unité produite
-  @param ALazyLoad           L'unité Sepi sera chargée en lazy-load
+  CrÃ©e un producteur d'importeur d'unitÃ© Sepi
+  @param ASepiUnit           UnitÃ© Sepi
+  @param AProducedUnitName   Surcharge du nom de l'unitÃ© produite
+  @param ALazyLoad           L'unitÃ© Sepi sera chargÃ©e en lazy-load
 *}
 constructor TSepiImporterProducer.Create(ASepiUnit: TSepiUnit;
   const AProducedUnitName: string = ''; ALazyLoad: Boolean = False);
@@ -278,7 +279,7 @@ begin
 end;
 
 {*
-  Méthode de production principale
+  MÃ©thode de production principale
   @return Code de l'importeur
 *}
 function TSepiImporterProducer.Produce: string;
@@ -354,8 +355,8 @@ begin
 end;
 
 {*
-  Requiert qu'une unité soit dans les uses
-  @param UnitName   Nom de l'unité à mettre dans les uses
+  Requiert qu'une unitÃ© soit dans les uses
+  @param UnitName   Nom de l'unitÃ© Ã  mettre dans les uses
 *}
 procedure TSepiImporterProducer.RequireUnit(const UnitName: string);
 begin
@@ -363,10 +364,10 @@ begin
 end;
 
 {*
-  Produit un identificateur pour un composant donné depuis un autre composant
-  En plus de cela, cette méthode ajoute les uses nécessaires.
+  Produit un identificateur pour un composant donnÃ© depuis un autre composant
+  En plus de cela, cette mÃ©thode ajoute les uses nÃ©cessaires.
   @param ForComponent    Composant destination
-  @param FromComponent   Composant à partir duquel le référencer
+  @param FromComponent   Composant Ã  partir duquel le rÃ©fÃ©rencer
   @return Identificateur pour ce composant
 *}
 function TSepiImporterProducer.IdentifierFor(
@@ -410,9 +411,9 @@ begin
 end;
 
 {*
-  Teste si un type est un ensemble spécial qui n'a pas de RTTI en Delphi
-  @param SepiType   Type à tester
-  @return True si c'est un type ensemble spécial sans RTTI, False sinon
+  Teste si un type est un ensemble spÃ©cial qui n'a pas de RTTI en Delphi
+  @param SepiType   Type Ã  tester
+  @return True si c'est un type ensemble spÃ©cial sans RTTI, False sinon
 *}
 function IsSpecialSetWithoutTypeInfo(SepiType: TSepiType): Boolean;
 var
@@ -436,15 +437,15 @@ end;
 
 {*
   Produit l'importation d'un type
-  @param Template   Template de l'importeur d'unité
-  @param SepiType   Type à importer
+  @param Template   Template de l'importeur d'unitÃ©
+  @param SepiType   Type Ã  importer
 *}
 procedure TSepiImporterProducer.HandleType(Template: TTemplate;
   SepiType: TSepiType);
 const
   CheckSizeOfStatement = CRLF+
     '{$IF SizeOf(%s) <> %d}'+CRLF+
-    '  {$MESSAGE WARN ''Le type %0:s n''''a pas la taille calculée par '+
+    '  {$MESSAGE WARN ''Le type %0:s n''''a pas la taille calculÃ©e par '+
       'Sepi''}'+CRLF;
   CheckAlignmentStatement = CRLF+
     'type'+CRLF+
@@ -453,7 +454,7 @@ const
     '    Field: %1:s;'+CRLF+
     '  end;'+CRLF+CRLF+
     '{$IF SizeOf(TCheckAlignmentFor%0:s) <> (%2:d + %3:d)}'+CRLF+
-    '  {$MESSAGE WARN ''Le type %1:s n''''a pas l''''alignement calculé par '+
+    '  {$MESSAGE WARN ''Le type %1:s n''''a pas l''''alignement calculÃ© par '+
       'Sepi''}'+CRLF+
     '{$IFEND}'+CRLF;
   NoTypeInfo = -1;
@@ -540,8 +541,8 @@ end;
 
 {*
   Produit l'importation d'une routine
-  @param Template   Template de l'importeur d'unité
-  @param Routine    Routine à importer
+  @param Template   Template de l'importeur d'unitÃ©
+  @param Routine    Routine Ã  importer
 *}
 procedure TSepiImporterProducer.HandleRoutine(Template: TTemplate;
   Routine: TSepiMethod);
@@ -585,8 +586,8 @@ end;
 
 {*
   Produit l'importation d'une routine
-  @param Template   Template de l'importeur d'unité
-  @param Variable   Variable à importer
+  @param Template   Template de l'importeur d'unitÃ©
+  @param Variable   Variable Ã  importer
 *}
 procedure TSepiImporterProducer.HandleVariable(Template: TTemplate;
   Variable: TSepiVariable);
@@ -611,8 +612,8 @@ end;
 
 {*
   Produit l'importation d'un type record
-  @param Template     Template de l'importeur d'unité
-  @param RecordType   Type record à importer
+  @param Template     Template de l'importeur d'unitÃ©
+  @param RecordType   Type record Ã  importer
 *}
 procedure TSepiImporterProducer.HandleRecordType(Template: TTemplate;
   RecordType: TSepiRecordType);
@@ -635,8 +636,8 @@ end;
 
 {*
   Produit l'importation d'un type classe
-  @param Template    Template de l'importeur d'unité
-  @param SepiClass   Classe à importer
+  @param Template    Template de l'importeur d'unitÃ©
+  @param SepiClass   Classe Ã  importer
 *}
 procedure TSepiImporterProducer.HandleClassType(Template: TTemplate;
   SepiClass: TSepiClass);
@@ -711,9 +712,9 @@ begin
 end;
 
 {*
-  Prépare les tags des méthodes d'un type composite
+  PrÃ©pare les tags des mÃ©thodes d'un type composite
   @param Container   Type composite
-  @return True s'il faut prévoir une importation pour ce type, False sinon
+  @return True s'il faut prÃ©voir une importation pour ce type, False sinon
 *}
 function TSepiImporterProducer.PrepareContainerMethodTags(
   Container: TSepiContainerType): Boolean;
@@ -797,10 +798,10 @@ begin
 end;
 
 {*
-  Produit l'importation d'une méthode de record
-  @param Template     Template de l'importeur d'unité
+  Produit l'importation d'une mÃ©thode de record
+  @param Template     Template de l'importeur d'unitÃ©
   @param RecordType   Record contenant
-  @param Method       Méthode à importer
+  @param Method       MÃ©thode Ã  importer
 *}
 procedure TSepiImporterProducer.HandleRecordMethod(Template: TTemplate;
   RecordType: TSepiRecordType; Method: TSepiMethod);
@@ -838,11 +839,11 @@ begin
 end;
 
 {*
-  Produit l'importation d'une méthode de classe
-  @param DeclTemplate   Template de la déclaration de la classe
-  @param ImplTemplate   Template de l'implémentation de la classe
+  Produit l'importation d'une mÃ©thode de classe
+  @param DeclTemplate   Template de la dÃ©claration de la classe
+  @param ImplTemplate   Template de l'implÃ©mentation de la classe
   @param SepiClass      Classe Sepi
-  @param Method         Méthode à importer
+  @param Method         MÃ©thode Ã  importer
 *}
 procedure TSepiImporterProducer.HandleMethod(
   DeclTemplate, ImplTemplate: TTemplate; SepiClass: TSepiClass;
@@ -885,11 +886,11 @@ begin
 end;
 
 {*
-  Résoud l'importation d'une méthode via une propriété
-  @param Template     Template de l'importeur d'unité
-  @param Method       Méthode à résoudre
-  @param AClassName   Nom de la classe de la méthode
-  @return Nom d'import de la méthode
+  RÃ©soud l'importation d'une mÃ©thode via une propriÃ©tÃ©
+  @param Template     Template de l'importeur d'unitÃ©
+  @param Method       MÃ©thode Ã  rÃ©soudre
+  @param AClassName   Nom de la classe de la mÃ©thode
+  @return Nom d'import de la mÃ©thode
 *}
 function TSepiImporterProducer.ResolvePropertyMethod(Template: TTemplate;
   Method: TSepiMethod; const MethodPrefix: string): string;
@@ -990,11 +991,11 @@ begin
 end;
 
 {*
-  Résoud l'importation d'une méthode overload
-  @param Template     Template de l'importeur d'unité
-  @param Method       Méthode à résoudre
-  @param AClassName   Nom de la classe de la méthode (vide pour une routine)
-  @return Nom d'import de la méthode
+  RÃ©soud l'importation d'une mÃ©thode overload
+  @param Template     Template de l'importeur d'unitÃ©
+  @param Method       MÃ©thode Ã  rÃ©soudre
+  @param AClassName   Nom de la classe de la mÃ©thode (vide pour une routine)
+  @return Nom d'import de la mÃ©thode
 *}
 function TSepiImporterProducer.ResolveOverloadedMethod(Template: TTemplate;
   Method: TSepiMethod; const MethodPrefix: string = ''): string;
@@ -1056,10 +1057,10 @@ begin
 end;
 
 {*
-  Résoud l'importation d'une routine de compiler magic
-  @param Template     Template de l'importeur d'unité
-  @param Method       Méthode à résoudre
-  @return Nom d'import de la méthode
+  RÃ©soud l'importation d'une routine de compiler magic
+  @param Template     Template de l'importeur d'unitÃ©
+  @param Method       MÃ©thode Ã  rÃ©soudre
+  @return Nom d'import de la mÃ©thode
 *}
 function TSepiImporterProducer.ResolveCompilerMagicRoutine(Template: TTemplate;
   Method: TSepiMethod): string;
@@ -1082,7 +1083,7 @@ begin
 end;
 
 {*
-  Détermine l'ID de type suivant
+  DÃ©termine l'ID de type suivant
   @return Prochain ID de type
 *}
 function TSepiImporterProducer.NextTypeID: Integer;
@@ -1092,8 +1093,8 @@ begin
 end;
 
 {*
-  Détermine l'ID de méthode suivant
-  @return Prochain ID de méthode
+  DÃ©termine l'ID de mÃ©thode suivant
+  @return Prochain ID de mÃ©thode
 *}
 function TSepiImporterProducer.NextMethodID: Integer;
 begin
@@ -1102,7 +1103,7 @@ begin
 end;
 
 {*
-  Détermine l'ID de variable suivant
+  DÃ©termine l'ID de variable suivant
   @return Prochain ID de variable
 *}
 function TSepiImporterProducer.NextVariableID: Integer;
@@ -1112,9 +1113,9 @@ begin
 end;
 
 {*
-  Teste si une méthode a besoin d'un paramètre Self explicite pour l'import
-  @param Method   Méthode à tester
-  @return True si l'usage d'un paramètre Self explicite est requis
+  Teste si une mÃ©thode a besoin d'un paramÃ¨tre Self explicite pour l'import
+  @param Method   MÃ©thode Ã  tester
+  @return True si l'usage d'un paramÃ¨tre Self explicite est requis
 *}
 function TSepiImporterProducer.NeedExplicitSelf(Method: TSepiMethod): Boolean;
 begin
@@ -1124,11 +1125,11 @@ begin
 end;
 
 {*
-  Produit une représentation chaîne d'une signature
+  Produit une reprÃ©sentation chaÃ®ne d'une signature
   @param Signature    Signature
   @param From         Component depuis lequel on regarde
-  @param MethodName   Nom de la méthode (défaut = '')
-  @return Représentation chaîne de la signature
+  @param MethodName   Nom de la mÃ©thode (dÃ©faut = '')
+  @return ReprÃ©sentation chaÃ®ne de la signature
 *}
 function TSepiImporterProducer.MakeSignature(Signature: TSepiSignature;
   From: TSepiComponent; const MethodName: string = '';
@@ -1210,10 +1211,10 @@ begin
 end;
 
 {*
-  Produit un importeur pour une unité Sepi
-  @param SepiUnit           Unité Sepi
-  @param ProducedUnitName   Surcharge du nom de l'unité produite
-  @param LazyLoad           L'unité Sepi sera chargée en lazy-load
+  Produit un importeur pour une unitÃ© Sepi
+  @param SepiUnit           UnitÃ© Sepi
+  @param ProducedUnitName   Surcharge du nom de l'unitÃ© produite
+  @param LazyLoad           L'unitÃ© Sepi sera chargÃ©e en lazy-load
   @return Code de l'importeur
 *}
 class function TSepiImporterProducer.ProduceImporter(SepiUnit: TSepiUnit;

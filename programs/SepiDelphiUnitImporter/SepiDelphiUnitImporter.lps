@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="41">
+      <Unit0>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="31"/>
+        <CursorPos X="1" Y="45"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ImporterConsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ImporterConsts"/>
+        <EditorIndex Value="20"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="28" Y="41"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="ImporterContext.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ImporterContext"/>
+        <EditorIndex Value="21"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="28" Y="41"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ImporterOptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ImporterOptions"/>
+        <EditorIndex Value="22"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="148"/>
+        <CursorPos X="50" Y="110"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="ImporterProducer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ImporterProducer"/>
+        <EditorIndex Value="23"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="28" Y="41"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="ImporterTemplates.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ImporterTemplates"/>
+        <EditorIndex Value="24"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="29" Y="41"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\..\source\run\SepiReflection\SepiSystemUnit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SepiSystemUnit"/>
+        <EditorIndex Value="33"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="46"/>
+        <CursorPos X="43" Y="52"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\source\run\SepiReflection\SepiOrdTypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SepiOrdTypes"/>
+        <EditorIndex Value="34"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="31"/>
+        <CursorPos X="1" Y="42"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\source\run\SepiDelphiCompiler\SepiDelphiLexer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SepiDelphiLexer"/>
+        <EditorIndex Value="26"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="42"/>
+        <CursorPos X="2" Y="48"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiCompiler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SepiCompiler"/>
+        <EditorIndex Value="15"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="59"/>
+        <CursorPos X="48" Y="70"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\..\source\run\SepiInterpreter\SepiRuntime.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SepiRuntime"/>
+        <EditorIndex Value="35"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="55"/>
+        <CursorPos X="48" Y="70"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\SepiParserGenerator\ConverterBackup\SepiCompilerErrors.pas"/>
+        <UnitName Value="SepiCompilerErrors"/>
+        <EditorIndex Value="25"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="34"/>
+        <CursorPos X="29" Y="41"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="ConverterBackup\SepiSystemUnit.pas"/>
+        <UnitName Value="SepiSystemUnit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiAsmInstructions.pas"/>
+        <UnitName Value="SepiAsmInstructions"/>
+        <EditorIndex Value="16"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="34"/>
+        <CursorPos X="1" Y="42"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiExpressions.pas"/>
+        <UnitName Value="SepiExpressions"/>
+        <EditorIndex Value="17"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="31"/>
+        <CursorPos X="20" Y="41"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiLexerUtils.pas"/>
+        <UnitName Value="SepiLexerUtils"/>
+        <EditorIndex Value="18"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="29" Y="41"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiParserUtils.pas"/>
+        <UnitName Value="SepiParserUtils"/>
+        <EditorIndex Value="19"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="29" Y="41"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="..\..\source\run\SepiDelphiCompiler\SepiDelphiCompiler.pas"/>
+        <UnitName Value="SepiDelphiCompiler"/>
+        <EditorIndex Value="32"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="30"/>
+        <CursorPos X="26" Y="41"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="..\..\source\run\SepiReflection\SepiReflectionCore.pas"/>
+        <UnitName Value="SepiReflectionCore"/>
+        <EditorIndex Value="36"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="235"/>
+        <CursorPos X="27" Y="241"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiDelphiLikeCompilerUtils.pas"/>
+        <UnitName Value="SepiDelphiLikeCompilerUtils"/>
+        <EditorIndex Value="27"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="28"/>
+        <CursorPos X="1" Y="42"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiStdCompilerNodes.pas"/>
+        <UnitName Value="SepiStdCompilerNodes"/>
+        <EditorIndex Value="28"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="22"/>
+        <CursorPos X="1" Y="42"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiLL1ParserUtils.pas"/>
+        <UnitName Value="SepiLL1ParserUtils"/>
+        <EditorIndex Value="29"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="31"/>
+        <CursorPos X="1" Y="42"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="..\..\source\run\SepiDelphiCompiler\SepiDelphiParser.pas"/>
+        <UnitName Value="SepiDelphiParser"/>
+        <EditorIndex Value="30"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="1" Y="44"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="..\..\source\run\SCL\ScUtils.pas"/>
+        <UnitName Value="ScUtils"/>
+        <EditorIndex Value="31"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="35"/>
+        <CursorPos X="13" Y="44"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\strutils.pp"/>
+        <UnitName Value="strutils"/>
+        <EditorIndex Value="14"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="55"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\win32\classes.pp"/>
+        <UnitName Value="Classes"/>
+        <EditorIndex Value="13"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="22"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\components\anchordocking\anchordocking.pas"/>
+        <UnitName Value="AnchorDocking"/>
+        <EditorIndex Value="8"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="487"/>
+        <CursorPos X="59" Y="493"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\classes\classesh.inc"/>
+        <EditorIndex Value="9"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="579"/>
+        <CursorPos X="17" Y="592"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\classes\stringl.inc"/>
+        <EditorIndex Value="10"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="434"/>
+        <CursorPos X="29" Y="453"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\win32\system.pp"/>
+        <UnitName Value="System"/>
+        <EditorIndex Value="11"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="58"/>
+        <CursorPos X="3" Y="69"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\inc\systemh.inc"/>
+        <EditorIndex Value="12"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="409"/>
+        <CursorPos X="33" Y="420"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\debugger\fpdebug\fpd\fpdcommand.pas"/>
+        <UnitName Value="FPDCommand"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="73"/>
+        <CursorPos X="54" Y="39"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\win\wininc\struct.inc"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="5731"/>
+        <CursorPos X="6" Y="5742"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\lcl\lclproc.pas"/>
+        <UnitName Value="LCLProc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\packages\fcl-process\src\win\process.inc"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="25" Y="226"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\packages\winunits-jedi\src\jwawinbase.pas"/>
+        <UnitName Value="JwaWinBase"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\packages\univint\src\Processes.pas"/>
+        <UnitName Value="Processes"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="833"/>
+        <CursorPos X="40" Y="910"/>
+        <UsageCount Value="10"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\packages\fcl-process\src\wince\process.inc"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="22"/>
+        <CursorPos X="25" Y="179"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\components\activex\activexcontainer.pas"/>
+        <UnitName Value="activexcontainer"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="35"/>
+        <CursorPos X="3" Y="46"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\lcl\interfaces\customdrawn\customdrawnwsfactory.pas"/>
+        <UnitName Value="CustomDrawnWSFactory"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="111"/>
+        <CursorPos X="53" Y="122"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="..\..\source\run\SCL\ScConsoleUtils.pas"/>
+        <UnitName Value="ScConsoleUtils"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="778"/>
+        <CursorPos X="1" Y="783"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit40>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\components\anchordocking\anchordocking.pas"/>
+        <Caret Line="493" Column="59" TopLine="487"/>
+      </Position1>
+      <Position2>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\classes\classesh.inc"/>
+        <Caret Line="3" Column="56" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\classes\classesh.inc"/>
+        <Caret Line="569" Column="26" TopLine="551"/>
+      </Position3>
+      <Position4>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\classes\classesh.inc"/>
+        <Caret Line="574" Column="37" TopLine="556"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\classes\classesh.inc"/>
+        <Caret Line="575" Column="46" TopLine="557"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\classes\classesh.inc"/>
+        <Caret Line="636" Column="27" TopLine="621"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\rtl\objpas\classes\stringl.inc"/>
+        <Caret Line="72" Column="3" TopLine="69"/>
+      </Position7>
+      <Position8>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="179" Column="34" TopLine="179"/>
+      </Position8>
+      <Position9>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="233" Column="26" TopLine="228"/>
+      </Position9>
+      <Position10>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="211" Column="25" TopLine="200"/>
+      </Position10>
+      <Position11>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\debugger\fpdebug\fpd\fpdcommand.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position11>
+      <Position12>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\debugger\fpdebug\fpd\fpdcommand.pas"/>
+        <Caret Line="146" Column="23" TopLine="31"/>
+      </Position12>
+      <Position13>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\packages\fcl-process\src\win\process.inc"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position13>
+      <Position14>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\debugger\fpdebug\fpd\fpdcommand.pas"/>
+        <Caret Line="146" Column="23" TopLine="31"/>
+      </Position14>
+      <Position15>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\debugger\fpdebug\fpd\fpdcommand.pas"/>
+        <Caret Line="39" Column="63" TopLine="29"/>
+      </Position15>
+      <Position16>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\debugger\fpdebug\fpd\fpdcommand.pas"/>
+        <Caret Line="149" Column="42" TopLine="135"/>
+      </Position16>
+      <Position17>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="340" Column="44" TopLine="327"/>
+      </Position17>
+      <Position18>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="45" Column="43" TopLine="43"/>
+      </Position18>
+      <Position19>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\debugger\fpdebug\fpd\fpdcommand.pas"/>
+        <Caret Line="39" Column="64" TopLine="28"/>
+      </Position19>
+      <Position20>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.7.1\source\packages\fcl-process\src\wince\process.inc"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position20>
+      <Position21>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="45" Column="9" TopLine="31"/>
+      </Position21>
+      <Position22>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="43" Column="1" TopLine="33"/>
+      </Position22>
+      <Position23>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="594" Column="25" TopLine="583"/>
+      </Position23>
+      <Position24>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="45" Column="1" TopLine="37"/>
+      </Position24>
+      <Position25>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="594" Column="49" TopLine="583"/>
+      </Position25>
+      <Position26>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="595" Column="53" TopLine="584"/>
+      </Position26>
+      <Position27>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\components\activex\activexcontainer.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position27>
+      <Position28>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="649" Column="1" TopLine="629"/>
+      </Position28>
+      <Position29>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\lcl\interfaces\customdrawn\customdrawnwsfactory.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position29>
+      <Position30>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="47" Column="14" TopLine="31"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

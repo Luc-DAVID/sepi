@@ -2,13 +2,13 @@
 <CONFIG>
   <Package Version="4">
     <PathDelim Value="\"/>
-    <Name Value="SepiReflection"/>
+    <Name Value="Sepi_Reflection"/>
     <CompilerOptions>
       <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
         <OtherUnitFiles Value="..\..\source\run\SepiReflection"/>
-        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
       <Other>
         <CompilerMessages>
@@ -48,13 +48,19 @@
       </Item7>
     </Files>
     <Type Value="RunTimeOnly"/>
-    <RequiredPkgs Count="2">
+    <RequiredPkgs Count="4">
       <Item1>
-        <PackageName Value="LCLBase"/>
+        <PackageName Value="Sepi_Core"/>
       </Item1>
       <Item2>
-        <PackageName Value="FCL"/>
+        <PackageName Value="SCL"/>
       </Item2>
+      <Item3>
+        <PackageName Value="LCLBase"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="FCL"/>
+      </Item4>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>

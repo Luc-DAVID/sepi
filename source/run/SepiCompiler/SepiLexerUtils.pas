@@ -38,10 +38,12 @@ statement from your version.
   @version 1.0
 *}
 unit SepiLexerUtils;
+{$i ..\..\source\Sepi.inc}
 
 interface
-
+{$IFNDEF FPC}
 {$D-,L-}
+{$ENDIF}
 
 uses
   SysUtils, Classes, Contnrs, ScUtils, SepiCore, SepiReflectionCore,

@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -38,14 +38,15 @@ statement from your version.
   @version 1.0
 *}
 unit ImporterConsts;
+{$i ..\..\source\Sepi.inc}
 
 interface
 
 resourcestring
   // Context errors
-  SBDSVersionNotInstalled = 'La version %s de BDS n''est pas installée';
+  SBDSVersionNotInstalled = 'La version %s de BDS n''est pas installÃ©e';
   SBDSVendorVersionNotInstalled =
-    'La version %1:s de BDS de %0:s n''est pas installée';
+    'La version %1:s de BDS de %0:s n''est pas installÃ©e';
 
   // Options errors
   SOneOrMoreFileNamesRequired = 'Un argument ou plus requis';
@@ -53,16 +54,16 @@ resourcestring
   // Importer errors
   SCantFindProgram = 'Ne peut trouver le programme externe %s';
   SCantFindSourceFile = 'Le fichier source %s n''existe pas';
-  SCantOpenSourceFile = 'Impossible de créer le fichier source %s';
-  SBadlyFormedOverloadFile = 'Fichier d''overloading mal formé';
-  SCantOpenDestFile = 'Impossible de créer le fichier de sortie %s';
+  SCantOpenSourceFile = 'Impossible de crÃ©er le fichier source %s';
+  SBadlyFormedOverloadFile = 'Fichier d''overloading mal formÃ©';
+  SCantOpenDestFile = 'Impossible de crÃ©er le fichier de sortie %s';
   SSepiInternalError = 'Erreur interne : %s';
   SCantCompileRCFile = 'Ne peut compiler le fichier de ressources %s';
 
   // Warnings
   SOverloadHasMoreLinesThanOriginal =
-    'L''overload contient plus de lignes que l''original : les numéros de '+
-    'ligne des erreurs seront probablement faussés.';
+    'L''overload contient plus de lignes que l''original : les numÃ©ros de '+
+    'ligne des erreurs seront probablement faussÃ©s.';
 
 const // don't localize
   PascalExt = '.pas';

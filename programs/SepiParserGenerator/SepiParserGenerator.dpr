@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -33,15 +33,20 @@ statement from your version.
 -------------------------------------------------------------------------------}
 
 {*
-  Générateur de compilateur pour Sepi
+  GÃ©nÃ©rateur de compilateur pour Sepi
   @author sjrd
   @version 1.0
 *}
 program SepiParserGenerator;
+{$i ..\..\source\Sepi.inc}
 
 {$APPTYPE CONSOLE}
 
 uses
+  {$IFDEF FPC}
+  Windows,
+  Interfaces,
+  {$ENDIF}
   SysUtils,
   Classes,
   ScUtils,
@@ -255,7 +260,7 @@ procedure MakeLL1ConflictList(Grammar: TGrammar; Report: TStrings);
 var
   I: Integer;
 begin
-  Report.Add('CONFLITS LL(1) DÉTECTÉS');
+  Report.Add('CONFLITS LL(1) DÃ‰TECTÃ‰S');
   Report.Add('');
   if Grammar.LL1ConflictCount = 0 then
     Report.Add('Aucun conflit LL(1)')
@@ -397,9 +402,9 @@ begin
 end;
 
 {*
-  Génère le parser
+  GÃ©nÃ¨re le parser
   @param Errors    Gestionnaire d'erreurs
-  @param Options   Options du générateur
+  @param Options   Options du gÃ©nÃ©rateur
 *}
 procedure GenerateParser(Errors: TSepiCompilerErrorList;
   Options: TGeneratorOptions);
@@ -456,10 +461,10 @@ begin
 end;
 
 {*
-  Affiche une erreur à la console
-  @param Self     Ignoré
-  @param Sender   Objet qui a déclenché l'erreur
-  @param Error    Erreur ajoutée
+  Affiche une erreur Ã  la console
+  @param Self     IgnorÃ©
+  @param Sender   Objet qui a dÃ©clenchÃ© l'erreur
+  @param Error    Erreur ajoutÃ©e
 *}
 procedure ErrorAdded(Self, Sender: TObject; Error: TSepiCompilerError);
 begin
@@ -479,7 +484,11 @@ begin
     try
       Errors := TSepiCompilerErrorList.Create;
       try
+        {$IFDEF FPC}
+        // TODO FPC @Errors.OnAddError := @ErrorAdded;
+        {$ELSE}
         @Errors.OnAddError := @ErrorAdded;
+        {$ENDIF}
         try
           GenerateParser(Errors, Options);
         except
@@ -514,5 +523,6 @@ begin
   if FindCmdLineSwitch('w', ['-'], False) or
     FindCmdLineSwitch('-wait', ['-'], False) then
     ReadLn;
+
 end.
 

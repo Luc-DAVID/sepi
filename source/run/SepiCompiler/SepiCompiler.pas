@@ -38,6 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiCompiler;
+{$i ..\..\source\Sepi.inc}
 
 interface
 
@@ -874,7 +875,7 @@ type
     procedure Seal;
 
     function Equals(Other: TSepiMemoryReference): Boolean;
-      {$IF RTLVersion >= 20} reintroduce; {$IFEND}
+      {$IF  Defined(FPC) or (RTLVersion >= 20)} reintroduce; {$IFEND}
 
     procedure Make;
 

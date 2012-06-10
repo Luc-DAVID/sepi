@@ -39,6 +39,10 @@ statement from your version.
 *}
 unit ScUtils;
 {$i ..\..\source\Sepi.inc}
+{$IF not Declared(CharInSet)}
+  {$DEFINE NEED_CHARINSET}
+{$IFEND}
+
 interface
 
 uses
@@ -46,10 +50,6 @@ uses
  Types,
  {$ENDIF}
  SysUtils, Classes;
-
-{$IF not Declared(CharInSet)}
-  {$DEFINE NEED_CHARINSET}
-{$IFEND}
 
 type
   {*

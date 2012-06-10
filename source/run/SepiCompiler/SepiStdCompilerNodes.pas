@@ -38,6 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiStdCompilerNodes;
+{$i ..\..\source\Sepi.inc}
 
 interface
 

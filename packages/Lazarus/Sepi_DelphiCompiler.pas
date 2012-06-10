@@ -2,13 +2,13 @@
   This source is only used to compile and install the package.
  }
 
-unit SepiReflection;
+unit Sepi_DelphiCompiler;
 
 interface
 
 uses
-  SepiArrayTypes, SepiMembers, SepiOrdTypes, SepiReflectionConsts, 
-  SepiReflectionCore, SepiStrTypes, SepiSystemUnit;
+  SepiDelphiCompiler, SepiDelphiCompilerConsts, SepiDelphiLexer, 
+  SepiDelphiParser;
 
 implementation
 

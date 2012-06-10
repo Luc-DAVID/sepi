@@ -38,6 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiDelphiCompiler;
+{$i ..\..\source\Sepi.inc}
 
 interface
 
@@ -1287,7 +1288,8 @@ function TDelphiBinaryOpNode.GetOperation: TSepiOperation;
 const
   SymbolClassToOperation: array[tkPlus..tkNotEqual] of TSepiOperation = (
     opAdd, opSubtract, opMultiply, opDivide, opIntDivide, opModulus,
-    opShiftLeft, opShiftRight, opOr, opAnd, opXor, 0,
+    opShiftLeft, opShiftRight, opOr, opAnd, opXor,
+    {$IFDEF FPC} TSepiOperation(0){$ELSE} 0{$ENDIF},
     opCmpLT, opCmpLE, opCmpGT, opCmpGE, opCmpNE
   );
 var

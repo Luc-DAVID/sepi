@@ -38,7 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiOpCodes;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 uses
@@ -100,7 +100,7 @@ type
     msParamsByte, msParamsWord, msTrueConst, msVariable
   );
 
-{$IF Byte(High(TSepiMemorySpace)) >= 16}
+{$IF High(TSepiMemorySpace) >= 16}
   {$MESSAGE ERROR 'TSepiMemorySpace mustn''t have more than 16 values'}
 {$IFEND}
 

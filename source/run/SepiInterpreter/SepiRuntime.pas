@@ -38,7 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiRuntime;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 uses
@@ -47,6 +47,10 @@ uses
   SepiMembers, SepiReflectionConsts, SepiOpCodes, SepiRuntimeOperations;
 
 type
+  {$IFDEF FPC}
+  PBoolean = PWinBool;
+  {$ENDIF}
+
   TSepiRuntimeMethod = class;
   TSepiRuntimeContext = class;
 

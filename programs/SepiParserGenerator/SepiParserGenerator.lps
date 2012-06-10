@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="14">
+      <Unit0>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="507"/>
+        <CursorPos X="1" Y="521"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="GeneratorOptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GeneratorOptions"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="GeneratorUtils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GeneratorUtils"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="84"/>
+        <CursorPos X="24" Y="90"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="SepiLL1Grammars.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SepiLL1Grammars"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="234"/>
+        <CursorPos X="48" Y="222"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\source\run\SepiCompiler\SepiCompilerErrors.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SepiCompilerErrors"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="146"/>
+        <CursorPos X="14" Y="152"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\source\run\SepiReflection\SepiReflectionCore.pas"/>
+        <UnitName Value="SepiReflectionCore"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="40"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\..\source\run\SepiReflection\SepiMembers.pas"/>
+        <UnitName Value="SepiMembers"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="32"/>
+        <CursorPos X="1" Y="41"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\SepiDelphiUnitImporter\ImporterProducer.pas"/>
+        <UnitName Value="ImporterProducer"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="54"/>
+        <CursorPos X="15" Y="60"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\bin\SepiDelphiUnitImporter\Templates\SepiImports.pas"/>
+        <UnitName Value="SepiImports"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="79"/>
+        <CursorPos X="17" Y="6"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\..\source\sepi.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.6.1\source\packages\fcl-extra\src\daemonapp.pp"/>
+        <UnitName Value="daemonapp"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\fpc\2.6.1\source\rtl\objpas\sysutils\sysstrh.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="247"/>
+        <CursorPos X="10" Y="253"/>
+        <UsageCount Value="10"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\lcl\interfaces\win32\interfaces.pp"/>
+        <UnitName Value="Interfaces"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="15"/>
+        <CursorPos X="21" Y="24"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\..\source\run\SCL\ScConsoleUtils.pas"/>
+        <UnitName Value="ScConsoleUtils"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="433"/>
+        <CursorPos X="1" Y="444"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit13>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="11" HistoryIndex="10">
+      <Position1>
+        <Filename Value="..\..\source\run\SepiReflection\SepiReflectionCore.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="522" Column="1" TopLine="512"/>
+      </Position2>
+      <Position3>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="522" Column="1" TopLine="512"/>
+      </Position3>
+      <Position4>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="465" Column="11" TopLine="459"/>
+      </Position4>
+      <Position5>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="518" Column="5" TopLine="511"/>
+      </Position5>
+      <Position6>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="522" Column="3" TopLine="512"/>
+      </Position6>
+      <Position7>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="523" Column="1" TopLine="503"/>
+      </Position7>
+      <Position8>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="49" Column="11" TopLine="31"/>
+      </Position8>
+      <Position9>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="41" Column="14" TopLine="37"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\..\..\..\..\..\..\lazarus\lcl\interfaces\win32\interfaces.pp"/>
+        <Caret Line="24" Column="21" TopLine="15"/>
+      </Position10>
+      <Position11>
+        <Filename Value="SepiParserGenerator.dpr"/>
+        <Caret Line="521" Column="1" TopLine="507"/>
+      </Position11>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="SepiParserGenerator.dpr"/>
+        <Line Value="521"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>

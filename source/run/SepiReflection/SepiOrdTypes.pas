@@ -39,6 +39,7 @@ statement from your version.
 *}
 unit SepiOrdTypes;
 {$i ..\..\source\Sepi.inc}
+
 interface
 
 uses
@@ -456,7 +457,7 @@ const
     SizeOf(PackedShortStrFalseTrue);
   SetTypeDataLength = SizeOf(TOrdType) + SizeOf(Pointer);
 
-  {$IF CompilerVersion >= 21}
+  {$IF Defined(FPC) or (CompilerVersion >= 21)}
   PointerTypeDataLength = SizeOf(PPTypeInfo);
   {$IFEND}
 
@@ -1278,7 +1279,8 @@ begin
   end;
 
   // TTypeData.BaseType
-  BaseTypeInfoRef := GetTypeData(BaseTypeInfo).BaseType;
+
+  BaseTypeInfoRef {$IFDEF FPC}^{$ENDIF} := GetTypeData(BaseTypeInfo).BaseType;
   Stream.WriteBuffer(BaseTypeInfoRef, SizeOf(PPTypeInfo));
 
   // TTypeData.NameList
@@ -1834,7 +1836,7 @@ end;
 *}
 function TSepiSetType.GetAlignment: Integer;
 begin
-  {$IF CompilerVersion < 20}
+  {$IF Defined(FPC) or (CompilerVersion < 20)}
     if Size <= 4 then
       Result := Size
     else
@@ -2002,7 +2004,7 @@ end;
 *}
 procedure TSepiPointerType.WriteTypeInfo(Stream: TStream);
 begin
-  {$IF CompilerVersion >= 21}
+  {$IF Defined(FPC) or (CompilerVersion >= 21)}
   inherited;
 
   PointTo.WriteTypeInfoRefToStream(Stream);

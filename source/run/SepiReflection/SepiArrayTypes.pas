@@ -190,7 +190,7 @@ uses
 const
   // Tailles de structure TTypeData en fonction des types
   ArrayTypeDataLengthBase = 2*SizeOf(Integer) + SizeOf(PPTypeInfo)
-    {$IF CompilerVersion >= 21} + SizeOf(Byte) {$IFEND};
+    {$IF Defined(FPC) or (CompilerVersion >= 21)} + SizeOf(Byte) {$IFEND};
   DynArrayTypeDataLengthBase =
     SizeOf(Longint) + 2*SizeOf(Pointer) + SizeOf(Integer);
 
@@ -412,7 +412,7 @@ end;
 *}
 function TSepiStaticArrayType.HasTypeInfo: Boolean;
 begin
-{$IF CompilerVersion < 21}
+{$IF Defined(FPC) or (CompilerVersion < 21)}
   Result := IsManaged;
 {$ELSE}
   Result := True;
@@ -425,7 +425,7 @@ end;
 procedure TSepiStaticArrayType.WriteTypeInfo(Stream: TStream);
 var
   ElCount: Integer;
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
   AElementType: TSepiType;
 {$IFEND}
 begin
@@ -437,7 +437,7 @@ begin
   Stream.WriteBuffer(ElCount, SizeOf(Integer));
   BaseElementType.WriteTypeInfoRefToStream(Stream);
 
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
   // TArrayTypeData
   Stream.WriteBuffer(FDimCount, SizeOf(Byte));
 
@@ -612,7 +612,7 @@ begin
   // TTypeData.DynUnitName
   WriteTypeInfoStringToStream(Stream, OwningUnit.Name);
 
-{$IF CompilerVersion >= 21}
+{$IF Defined(FPC) or (CompilerVersion >= 21)}
   // TTypeData.DynArrElType
   { TODO 1 : Understand difference between elType2 and DynArrElType }
   ElementType.WriteTypeInfoRefToStream(Stream);

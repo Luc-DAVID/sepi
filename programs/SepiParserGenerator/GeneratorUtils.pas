@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -33,11 +33,15 @@ statement from your version.
 -------------------------------------------------------------------------------}
 
 {*
-  Utilitaires de génération du parser
+  Utilitaires de gÃ©nÃ©ration du parser
   @author sjrd
   @version 1.0
 *}
 unit GeneratorUtils;
+
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
 
 interface
 

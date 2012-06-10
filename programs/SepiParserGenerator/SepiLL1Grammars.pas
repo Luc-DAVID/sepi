@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -33,6 +33,10 @@ statement from your version.
 -------------------------------------------------------------------------------}
 
 unit SepiLL1Grammars;
+
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
 
 interface
 
@@ -215,7 +219,7 @@ type
     destructor Destroy; override;
 
     function Equals(Obj: TObject): Boolean;
-      {$IF RTLVersion >= 20.0} override; {$IFEND}
+      {$IF Defined(FPC) or (RTLVersion >= 20.0)} override; {$IFEND}
 
     property Empty: Boolean read FEmpty;
     property ItemCount: Integer read GetItemCount;
@@ -327,8 +331,8 @@ implementation
 {----------------}
 
 {*
-  Modifie la propriété Empty
-  @param Value   Nouvelle valeur de la propriété Empty
+  Modifie la propriÃ©tÃ© Empty
+  @param Value   Nouvelle valeur de la propriÃ©tÃ© Empty
 *}
 procedure TPremSet.SetEmpty(Value: Boolean);
 begin
@@ -726,7 +730,7 @@ end;
 procedure TChoice.SetAlternativeChoice(AltChoice: TChoice);
 begin
   if Empty then
-    raise Exception.Create('Un choix vide ne peut être un try');
+    raise Exception.Create('Un choix vide ne peut Ãªtre un try');
 
   FIsTry := True;
   FAlternativeChoice := AltChoice
@@ -776,7 +780,7 @@ begin
     // On ignore le texte avant le premier #####
     I := Fichier.IndexOf('#####')+1;
 
-    // Création des Terminals
+    // CrÃ©ation des Terminals
     while Fichier[I] <> '#####' do
     begin
       if Fichier[I] <> '' then
@@ -797,14 +801,14 @@ begin
       else
         Inc(I);
 
-    // Préparation de l'ID du premier non-terminal
+    // PrÃ©paration de l'ID du premier non-terminal
     FFirstNonTerminalID := TerminalCount;
 
     // Chargement des non-Terminals et des fins de Choices
     LoadNonTerminals(Fichier);
     LoadChoiceEnds(Fichier);
 
-    // Compléter les non-Terminals
+    // ComplÃ©ter les non-Terminals
     for I := 0 to NonTerminalCount-1 do
       NonTerminals[I].Complete;
 
@@ -947,7 +951,7 @@ begin
   // ChoiceEnd de Choices vide
   FChoiceEnds.Add(TChoice.CreateEmpty);
 
-  // Créer tous les Choices des non-Terminals
+  // CrÃ©er tous les Choices des non-Terminals
   NonTerminal := nil;
   for I := 0 to Strings.Count-1 do
   begin
@@ -968,7 +972,7 @@ begin
   end;
   FChoiceCount := ChoiceEndCount;
 
-  // Créer toutes les fins de Choices
+  // CrÃ©er toutes les fins de Choices
   I := 1;
   while I < ChoiceEndCount do
   begin
@@ -991,7 +995,7 @@ begin
   repeat
     Change := False;
 
-    // Règle 1
+    // RÃ¨gle 1
     for I := 0 to NonTerminalCount-1 do
     begin
       NonTerminal := NonTerminals[I];
@@ -1006,11 +1010,11 @@ begin
     begin
       ChoiceEnd := ChoiceEnds[I];
 
-      // Règle 2
+      // RÃ¨gle 2
       if ChoiceEnd.PremSet.AddPrem(ChoiceEnd.First.PremSet, False) then
         Change := True;
 
-      // Règle 3
+      // RÃ¨gle 3
       if ChoiceEnd.First.PremSet.Empty then
         if ChoiceEnd.PremSet.AddPrem(ChoiceEnd.ChoiceEnd.PremSet) then
           Change := True;
@@ -1041,11 +1045,11 @@ begin
           begin
             Premier := TNonTerminal(ChoiceEnd.First);
 
-            // Règle 1
+            // RÃ¨gle 1
             if Premier.SuivSet.AddPrem(ChoiceEnd.ChoiceEnd.PremSet) then
               Change := True;
 
-            // Règle 2
+            // RÃ¨gle 2
             if ChoiceEnd.ChoiceEnd.PremSet.Empty then
               if Premier.SuivSet.AddSuiv(NonTerminal.SuivSet) then
                 Change := True;

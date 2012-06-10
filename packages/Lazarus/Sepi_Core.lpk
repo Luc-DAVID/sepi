@@ -32,13 +32,19 @@
       </Item3>
     </Files>
     <Type Value="RunTimeOnly"/>
-    <RequiredPkgs Count="2">
+    <RequiredPkgs Count="4">
       <Item1>
-        <PackageName Value="LCLBase"/>
+        <PackageName Value="SVCL"/>
       </Item1>
       <Item2>
-        <PackageName Value="FCL"/>
+        <PackageName Value="SDL"/>
       </Item2>
+      <Item3>
+        <PackageName Value="LCLBase"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="FCL"/>
+      </Item4>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>

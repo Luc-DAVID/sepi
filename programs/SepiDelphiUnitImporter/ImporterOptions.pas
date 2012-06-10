@@ -1,6 +1,6 @@
 {-------------------------------------------------------------------------------
 Sepi - Object-oriented script engine for Delphi
-Copyright (C) 2006-2009  Sébastien Doeraene
+Copyright (C) 2006-2009  SÃ©bastien Doeraene
 All Rights Reserved
 
 This file is part of Sepi.
@@ -38,6 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit ImporterOptions;
+{$i ..\..\source\Sepi.inc}
 
 interface
 
@@ -52,16 +53,16 @@ type
   *}
   TOptions = class(TCommandLine)
   private
-    FFileNames: TStrings;       /// Noms des fichiers à traiter
-    FWaitWhenFinished: Boolean; /// Indique s'il faut attendre quand terminé
+    FFileNames: TStrings;       /// Noms des fichiers Ã  traiter
+    FWaitWhenFinished: Boolean; /// Indique s'il faut attendre quand terminÃ©
 
-    FBDSVersion: string; /// Version de BDS utilisée
+    FBDSVersion: string; /// Version de BDS utilisÃ©e
 
     FCacheDir: TFileName;     /// Dossier de cache
     FOutputDir: TFileName;    /// Dossier de destination
     FResourcesDir: TFileName; /// Dossier de destination des ressources
 
-    FSkipIfNotExists: Boolean; /// Ignorer les unités non trouvées
+    FSkipIfNotExists: Boolean; /// Ignorer les unitÃ©s non trouvÃ©es
     FProduceLazyLoad: Boolean; /// Produire du code lazy-load
     FExcludeRoutines: Boolean; /// Exclure les routines
   public
@@ -98,15 +99,15 @@ begin
 
   // Default values
 
-  {$IF CompilerVersion = 17}
+  {$IF Defined(FPC) or (CompilerVersion = 17)}
     FBDSVersion := '3.0';
-  {$ELSEIF CompilerVersion = 18}
+  {$ELSEIF Defined(FPC) or (CompilerVersion = 18)}
     FBDSVersion := '4.0';
-  {$ELSEIF CompilerVersion = 18.5}
+  {$ELSEIF Defined(FPC) or (CompilerVersion = 18.5)}
     FBDSVersion := '5.0';
-  {$ELSEIF CompilerVersion = 20}
+  {$ELSEIF Defined(FPC) or (CompilerVersion = 20)}
     FBDSVersion := '6.0';
-  {$ELSEIF CompilerVersion = 21}
+  {$ELSEIF Defined(FPC) or (CompilerVersion = 21)}
     FBDSVersion := '7.0';
   {$ELSE}
     FBDSVersion := 'Unknown';

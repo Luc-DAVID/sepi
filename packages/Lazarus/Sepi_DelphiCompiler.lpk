@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="Sepi_DelphiCompiler"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <Libraries Value="lib\$(TargetCPU)-$(TargetOS)"/>
+        <OtherUnitFiles Value="..\..\source\run\SepiDelphiCompiler"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Linking>
+        <Debugging>
+          <GenerateDebugInfo Value="False"/>
+        </Debugging>
+      </Linking>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Files Count="4">
+      <Item1>
+        <Filename Value="..\..\source\run\SepiDelphiCompiler\SepiDelphiCompiler.pas"/>
+        <UnitName Value="SepiDelphiCompiler"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\..\source\run\SepiDelphiCompiler\SepiDelphiCompilerConsts.pas"/>
+        <UnitName Value="SepiDelphiCompilerConsts"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\..\source\run\SepiDelphiCompiler\SepiDelphiLexer.pas"/>
+        <UnitName Value="SepiDelphiLexer"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\..\source\run\SepiDelphiCompiler\SepiDelphiParser.pas"/>
+        <UnitName Value="SepiDelphiParser"/>
+      </Item4>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <RequiredPkgs Count="5">
+      <Item1>
+        <PackageName Value="Sepi_Reflection"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="Sepi_Core"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="SCL"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="LCLBase"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="FCL"/>
+      </Item5>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

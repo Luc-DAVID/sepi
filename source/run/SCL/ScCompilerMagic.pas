@@ -50,6 +50,7 @@ uses
 {$IF not defined(PtrUInt)}
 type
   PtrUInt = Cardinal;
+  PPtrUint = ^PtrUInt;
 {$IFEND}
 {$IF not defined(PtrInt)}
 type

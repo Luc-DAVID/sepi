@@ -40,7 +40,7 @@ uses
   SysUtils, Classes, StrUtils, TypInfo, ScStrUtils,
   SepiReflectionCore, SepiOrdTypes, SepiMembers, SepiArrayTypes, SepiSystemUnit,
   SepiExpressions, SepiParseTrees, SepiLexerUtils, SepiParserUtils,
-  SepiCompilerErrors, SepiCompiler, SepiCompilerConsts;
+  SepiCompilerErrors, SepiCompilerConsts, SepiCompiler;
 
 type
   /// Tableau de TSepiSourcePosition

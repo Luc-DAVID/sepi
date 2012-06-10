@@ -50,6 +50,11 @@ uses
   SepiSystemUnit, SepiCompiler, SepiCompilerErrors, SepiCompilerConsts;
 
 type
+  {$IFDEF FPC}
+  TDispatchMessage = record
+    MsgID: Word;
+  end;
+  {$ENDIF}
   TSepiNonTerminal = class;
   TSepiParseTreeRootNode = class;
 

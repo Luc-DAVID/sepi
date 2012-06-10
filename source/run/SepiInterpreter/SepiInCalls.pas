@@ -38,7 +38,7 @@ statement from your version.
   @version 1.0
 *}
 unit SepiInCalls;
-
+{$i ..\..\source\Sepi.inc}
 interface
 
 uses
@@ -292,7 +292,7 @@ asm
         JZ      @@noClassCreate
         MOV     EAX,[EBX]
         SUB     ESP,$10
-        CALL    System.@ClassCreate // keeps ECX
+// TODO FPC        CALL    System.@ClassCreate // keeps ECX
         MOV     [EBX],EAX           // update Self parameter
 @@noClassCreate:
 
@@ -309,7 +309,7 @@ asm
         TEST    DL,DL
         JZ      @@noAfterConstruction
         MOV     EAX,[EBX]
-        CALL    System.@AfterConstruction
+        // TODO FPC        CALL    System.@AfterConstruction
         POP     DWORD PTR FS:[0]
         ADD     ESP,$0C
 @@noAfterConstruction:
@@ -337,14 +337,14 @@ asm
 
         MOV     EAX,[EBX]
         MOV     EDX,[EBX+4]
-        CALL    System.@BeforeDestruction
+        // TODO FPC        CALL    System.@BeforeDestruction
 
         // Invoke the destructor code
 
         MOV     EAX,ESI
         MOV     EDX,EBX
         XOR     ECX,ECX
-        CALL    TSepiRuntimeMethod.Invoke
+        // TODO FPC        CALL    TSepiRuntimeMethod.Invoke
 
         // Free instance
 
@@ -352,7 +352,7 @@ asm
         TEST    DL,DL
         JZ      @@noClassDestroy
         MOV     EAX,[EBX]
-        CALL    System.@ClassDestroy
+        // TODO FPC        CALL    System.@ClassDestroy
 @@noClassDestroy:
 
         POP     ESI
