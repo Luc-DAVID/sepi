@@ -11,8 +11,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="64"/>
-        <CursorPos X="11" Y="61"/>
+        <TopLine Value="494"/>
+        <CursorPos X="51" Y="507"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -367,7 +367,7 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="16" HistoryIndex="15">
+    <JumpHistory Count="17" HistoryIndex="16">
       <Position1>
         <Filename Value="SepiDelphiUnitImporter.dpr"/>
         <Caret Line="179" Column="34" TopLine="179"/>
@@ -432,17 +432,10 @@
         <Filename Value="SepiDelphiUnitImporter.dpr"/>
         <Caret Line="8" Column="75" TopLine="1"/>
       </Position16>
+      <Position17>
+        <Filename Value="SepiDelphiUnitImporter.dpr"/>
+        <Caret Line="104" Column="40" TopLine="566"/>
+      </Position17>
     </JumpHistory>
   </ProjectSession>
-  <Debugging>
-    <BreakPoints Count="1">
-      <Item1>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="SepiDelphiUnitImporter.dpr"/>
-        <Line Value="581"/>
-      </Item1>
-    </BreakPoints>
-  </Debugging>
 </CONFIG>
