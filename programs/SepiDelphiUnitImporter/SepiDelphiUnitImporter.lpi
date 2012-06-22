@@ -112,7 +112,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="project1"/>
+      <Filename Value="..\..\bin\SepiDelphiUnitImporter\Lazarus\SepiLazarusUnitImporter"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
@@ -140,9 +140,6 @@
       </Optimizations>
     </CodeGeneration>
     <Linking>
-      <Debugging>
-        <UseLineInfoUnit Value="False"/>
-      </Debugging>
       <LinkSmart Value="True"/>
     </Linking>
     <Other>

@@ -506,7 +506,7 @@ end;
   @param Context           Contexte de compilation
   @param SourceFileName    Nom du fichier source à traiter
 *}
-procedure ProcessImport(Context: TImporterContext;
+procedure (Context: TImporterContext;
   const SourceFileName: TFileName);
 var
   SourceFile: TStrings;

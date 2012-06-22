@@ -37,7 +37,7 @@ unit SepiImportsWinTypes;
 interface
 
 uses
-{$IF RTLVersion >= 21}
+{$IF Defined(FPC) or (RTLVersion >= 21)}
   SepiImportsDwmapi,
   SepiImportsObjectArray,
   SepiImportsPropSys,
